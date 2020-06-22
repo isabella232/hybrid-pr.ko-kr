@@ -1,0 +1,72 @@
+### YamlMime:Landing
+title: Azure 하이브리드 패턴 및 솔루션 설명서
+summary: 앱 개발에서 하이브리드 패턴 및 솔루션 예를 활용하는 방법에 대해 알아봅니다. Azure 및 Azure Stack을 통해 인텔리전트 클라우드 및 인텔리전트 에지 서비스 제품군을 기반으로 빌드된 하이브리드 애플리케이션을 개발할 수 있습니다.
+metadata:
+  title: Azure 하이브리드 패턴 및 솔루션 설명서
+  description: 앱 개발에서 하이브리드 패턴 및 솔루션 예를 활용하는 방법에 대해 알아봅니다. Azure 및 Azure Stack을 통해 인텔리전트 클라우드 및 인텔리전트 에지 서비스 제품군을 기반으로 빌드된 하이브리드 애플리케이션을 개발할 수 있습니다.
+  ms.service: azure-stack
+  ms.topic: landing-page
+  author: BryanLa
+  ms.author: bryanla
+  ms.date: 10/31/2019
+  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
+  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84909721"
+landingContent:
+- title: 하이브리드 패턴 및 솔루션 정보
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 하이브리드 패턴 및 솔루션 예로는 무엇이 있습니까?
+      url: overview-patterns-solution-examples.md
+  - linkListType: concept
+    links:
+    - text: 하이브리드 앱 디자인 고려 사항
+      url: overview-app-design-considerations.md
+- title: 하이브리드 패턴 살펴보기
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: 클라우드 간 크기 조정
+      url: pattern-cross-cloud-scale.md
+    - text: DevOps 하이브리드 CI/CD
+      url: pattern-cicd-pipeline.md
+    - text: 고객 수 검색(소매)
+      url: pattern-retail-footfall-detection.md
+    - text: 지리적으로 분산된 앱
+      url: pattern-geo-distributed.md
+- title: 하이브리드 솔루션 배포 예
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 클라우드 간 크기 조정
+      url: solution-deployment-guide-cross-cloud-scaling.md
+    - text: DevOps 하이브리드 CI/CD
+      url: https://aka.ms/hybriddevopsdeploy
+    - text: 고객 수 검색(소매)
+      url: solution-deployment-guide-retail-footfall-detection.md
+    - text: 지리적으로 분산된 앱
+      url: solution-deployment-guide-geo-distributed.md
+- title: 소매점 고객 수 검색 시나리오
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: 패턴
+      url: pattern-retail-footfall-detection.md
+  - linkListType: tutorial
+    links:
+    - text: 솔루션 배포 가이드
+      url: solution-deployment-guide-retail-footfall-detection.md
+- title: 온-프레미스 데이터를 사용한 클라우드 간 크기 조정 시나리오
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: 패턴
+      url: pattern-cross-cloud-scale-onprem-data.md
+  - linkListType: tutorial
+    links:
+    - text: 솔루션 배포 가이드
+      url: solution-deployment-guide-cross-cloud-scaling-onprem-data.md

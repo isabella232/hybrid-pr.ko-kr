@@ -1,0 +1,74 @@
+- name: Azure 하이브리드 설명서
+  href: index.yml
+- name: 개요
+  items:
+    - name: 하이브리드 패턴 및 솔루션 예
+      href: overview-patterns-solution-examples.md
+- name: 패턴
+  items:
+    - name: Single
+      items:
+        - name: 클라우드 간 크기 조정
+          href: pattern-cross-cloud-scale.md
+        - name: DevOps 하이브리드 CI/CD
+          href: pattern-cicd-pipeline.md
+        - name: 지리적으로 분산된 앱
+          href: pattern-geo-distributed.md
+        - name: 하이브리드 릴레이
+          href: pattern-hybrid-relay.md
+        - name: 계층화된 데이터
+          href: pattern-tiered-data-analytics.md
+        - name: 에지에서 ML 모델 학습
+          href: pattern-train-ml-model-at-edge.md
+    - name: 다중
+      items:
+        - name: 클라우드 간 크기 조정(온-프레미스 데이터)
+          href: pattern-cross-cloud-scale-onprem-data.md
+        - name: 고객 수 검색(소매)
+          href: pattern-retail-footfall-detection.md
+        - name: 에지에서 품절 검색
+          href: pattern-out-of-stock-at-edge.md
+- name: 솔루션 배포 가이드
+  items:
+    - name: 클라우드 간 크기 조정
+      href: solution-deployment-guide-cross-cloud-scaling.md
+    - name: 클라우드 간 크기 조정(온-프레미스 데이터)
+      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+    - name: DevOps 하이브리드 CI/CD
+      href: 'https://aka.ms/hybriddevopsdeploy'
+    - name: 고객 수 검색(소매)
+      href: solution-deployment-guide-retail-footfall-detection.md
+    - name: 지리적으로 분산된 앱
+      href: solution-deployment-guide-geo-distributed.md
+    - name: 하이브리드 연결
+      href: solution-deployment-guide-connectivity.md
+    - name: 하이브리드 ID
+      href: solution-deployment-guide-identity.md
+    - name: 하이브리드 릴레이
+      href: 'https://aka.ms/hybridrelaydeployment'
+    - name: 계층화된 데이터
+      href: 'https://aka.ms/tiereddatadeploy'
+    - name: 고가용성 MongoDB
+      href: solution-deployment-guide-mongodb-ha.md
+    - name: 고가용성 SQL Server 2016
+      href: solution-deployment-guide-sql-ha.md
+    - name: 에지의 품절
+      href: 'https://aka.ms/edgeinferencingdeploy'
+    - name: 에지에서 ML 모델 학습
+      href: 'https://aka.ms/edgetrainingdeploy'
+- name: 개념
+  items:
+    - name: 하이브리드 앱 디자인 고려 사항
+      href: overview-app-design-considerations.md
+- name: 관련 항목
+  items:
+    - name: Azure 설명서
+      href: /azure
+    - name: Azure Stack 설명서
+      href: /azure-stack
+- name: 리소스
+  items:
+    - name: Microsoft Learn
+      href: /learn
+    - name: Microsoft Q&A
+      href: /answers/products/
