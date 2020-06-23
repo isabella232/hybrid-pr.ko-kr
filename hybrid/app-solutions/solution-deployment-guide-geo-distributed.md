@@ -533,7 +533,7 @@ A 레코드가 웹 앱에 매핑되면 도메인 레지스트리는 전용 IP �
 
 ![HTTPS 적용](media/solution-deployment-guide-geo-distributed/image43.png)
 
-작업이 완료 되 면 앱을 가리키는 HTTP Url로 이동 합니다. 예를 들면 다음과 같습니다.
+작업이 완료 되 면 앱을 가리키는 HTTP Url로 이동 합니다. 예를 들어:
 
 - https://<app_name>. azurewebsites.net
 - `https://northwindcloud.com`
