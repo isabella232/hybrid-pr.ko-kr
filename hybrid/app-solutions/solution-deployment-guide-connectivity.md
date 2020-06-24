@@ -30,7 +30,7 @@ ms.locfileid: "84910868"
 > 
 > [하이브리드 앱 디자인 고려 사항](overview-app-design-considerations.md) 문서에서는 하이브리드 앱을 디자인, 배포 및 운영 하기 위한 소프트웨어 품질 (배치, 확장성, 가용성, 복원 력, 관리 효율성 및 보안)의 핵심 요소을 검토 합니다. 디자인 고려 사항은 하이브리드 앱 디자인을 최적화 하 고 프로덕션 환경에서 문제를 최소화 하는 데 도움이 됩니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>전제 조건
 
 하이브리드 연결 배포를 빌드하려면 몇 가지 구성 요소가 필요 합니다. 이러한 구성 요소 중 일부는 준비 하는 데 시간이 걸리므로 적절 하 게 계획 합니다.
 
@@ -39,7 +39,7 @@ ms.locfileid: "84910868"
 - Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 - Azure에서 [웹 앱](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) 을 만듭니다. 솔루션에 필요 하므로 웹 앱 URL을 기록해 둡니다.
 
-### <a name="azure-stack-hub"></a>Azure Stack 허브
+### <a name="azure-stack-hub"></a>Azure Stack Hub
 
 Azure OEM/하드웨어 파트너는 프로덕션 Azure Stack 허브를 배포할 수 있으며, 모든 사용자가 ASDK (Azure Stack Development Kit)를 배포할 수 있습니다.
 
