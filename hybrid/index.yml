@@ -9,13 +9,13 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 06/19/2020
-  ms.openlocfilehash: 4d2cd89f0375031c25820509290f4fe9336d0ca4
-  ms.sourcegitcommit: 058c7d4366cd015b8c5fbcba012f9e74be9f81cc
+  ms.date: 06/23/2020
+  ms.openlocfilehash: 07c1f66901ca5cfeb1fba10f4ae256a727fe9aed
+  ms.sourcegitcommit: 7e1ffd9825fce79d1d3972c0dfd0adc25f4adc0a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/19/2020
-  ms.locfileid: "85111273"
+  ms.lasthandoff: 06/23/2020
+  ms.locfileid: "85289519"
 highlightedContent:
   items:
   - title: Azure 하이브리드 가상 이벤트 - 2020년 6월 24일
@@ -281,10 +281,10 @@ additionalContent:
       links:
       - url: /azure-stack/operator/compare-azure-azure-stack
         text: Azure 글로벌 및 Azure Stack
-      - url: https://azure.microsoft.com/blog/topics/hybrid/
-        text: Azure 하이브리드 블로그
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Azure 하이브리드 기능
+      - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
+        text: 고객 하이브리드 클라우드 스토리
       - url: /learn
         text: Microsoft Learn 대화형 학습
       - url: /learn/tv/
@@ -295,6 +295,8 @@ additionalContent:
         text: Azure용 .NET 개발
       - url: https://github.com/likamrat/azure_arc
         text: Azure Arc 빠른 시작 가이드
+      - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
+        text: Azure IoT Edge 디바이스에 대해 인증됨
       - url: /samples/browse/
         text: 코드 샘플 브라우저
       - url: https://www.youtube.com/watch?v=2lw8zOpJTn0
@@ -307,7 +309,7 @@ additionalContent:
         text: Visual Studio Azure 개발
     - title: 지원 및 다른 리소스
       links:
-      - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
-        text: Azure IoT Edge 디바이스에 대해 인증됨
+      - url: https://azure.microsoft.com/blog/topics/hybrid/
+        text: Azure 하이브리드 블로그
       - url: /answers/products/
         text: Microsoft Q&A 포럼
