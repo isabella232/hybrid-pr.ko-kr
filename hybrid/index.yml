@@ -10,17 +10,20 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: 9793f34db13e324de65b719613c0f4dbf4bdf127
-  ms.sourcegitcommit: 8d75007af6ad574e0629208464bbadb97a5c438e
+  ms.openlocfilehash: 5e47f05293640339329914a3183fae51649ded4c
+  ms.sourcegitcommit: ad41cc782094d57b506a3a1d98209f6cf94f0f3b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/22/2020
-  ms.locfileid: "86949664"
+  ms.lasthandoff: 07/24/2020
+  ms.locfileid: "87121810"
 highlightedContent:
   items:
   - title: 새 Azure Stack HCI 검색
     itemType: video
     url: https://azure.microsoft.com/resources/videos/discover-the-new-azure-stack-hci/
+  - title: 'Inspire 2020: Azure Stack HCI의 새로운 기능'
+    itemType: video
+    url: https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030
   - title: Azure 하이브리드 가상 이벤트
     itemType: video
     url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
@@ -258,7 +261,7 @@ additionalContent:
         text: 패턴 및 솔루션 예로는 무엇이 있습니까?
       - url: ./app-solutions/overview-app-design-considerations.md
         text: 하이브리드 앱 디자인 고려 사항
-    - title: 하이브리드 패턴 살펴보기
+    - title: 하이브리드 앱 패턴 살펴보기
       links:
       - url: ./app-solutions/pattern-cross-cloud-scale.md
         text: 클라우드 간 크기 조정
@@ -268,7 +271,7 @@ additionalContent:
         text: 고객 수 검색(소매)
       - url: ./app-solutions/pattern-geo-distributed.md
         text: 지리적으로 분산된 앱
-    - title: 하이브리드 솔루션 배포 예
+    - title: 하이브리드 앱 솔루션 배포 예
       links:
       - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
         text: 클라우드 간 크기 조정
@@ -298,6 +301,8 @@ additionalContent:
         text: Azure용 .NET 개발
       - url: https://github.com/likamrat/azure_arc
         text: Azure Arc 빠른 시작 가이드
+      - url: https://github.com/Azure/AzureStackHCI-EvalGuide
+        text: Azure Stack HCI 평가 가이드
       - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
         text: Azure IoT Edge 디바이스에 대해 인증됨
       - url: /samples/browse/
