@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: ab8146340f284af226f336af8fddd2a30977869d
-  ms.sourcegitcommit: 2efdd6422c2af773ad7890dcbc546e816e501c0e
+  ms.openlocfilehash: b888756accc1e538d358e91aec6740b392dafea0
+  ms.sourcegitcommit: 72dbbc933220a4e7273abf46ad3fc6032d122ca7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87264100"
+  ms.lasthandoff: 07/31/2020
+  ms.locfileid: "87473798"
 highlightedContent:
   items:
   - title: 새 Azure Stack HCI 검색
@@ -56,7 +56,7 @@ productDirectory:
     - url: /azure-stack/hci
       text: Azure Stack HCI
   - title: 디바이스용 인텔리전트 에지 플랫폼
-    imageSrc: media/index/azure-stack-hub.svg
+    imageSrc: media/index/intelligent.svg
     links:
     - url: /azure/iot-edge/
       text: Azure IoT Edge
@@ -129,7 +129,7 @@ conceptualContent:
       text: Azure Event Hubs
     - url: /azure/azure-functions/
       itemType: overview
-      text: Azure 기능
+      text: Azure Functions
     - url: /azure/logic-apps/
       itemType: overview
       text: Azure Logic Apps
@@ -251,6 +251,20 @@ conceptualContent:
     - url: /azure/fxt-edge-filer/fxt-overview
       itemType: overview
       text: Azure FXT Edge Filer
+  - title: 도구
+    links:
+    - url: /dotnet/azure/
+      itemType: overview
+      text: Azure용 .NET 개발
+    - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+      itemType: overview
+      text: Vision AI Developer Kit
+    - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+      itemType: overview
+      text: Visual Studio Code용 Azure IoT Tools
+    - url: /visualstudio/azure/
+      itemType: overview
+      text: Visual Studio Azure 개발
 additionalContent:
   sections:
   - title: 하이브리드 솔루션
@@ -283,43 +297,43 @@ additionalContent:
         text: 지리적으로 분산된 앱
   - title: 추가 리소스
     items:
-    - title: 일반 리소스
+    - title: 일반
       links:
       - url: /azure-stack/operator/compare-azure-azure-stack
         text: Azure 글로벌 클라우드 및 Azure Stack
+      - url: https://azure.microsoft.com/blog/topics/hybrid/
+        text: Azure 하이브리드 블로그
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Azure 하이브리드 기능
-      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
-        text: Azure Stack 하이브리드 애플리케이션 소개
+      - url: https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22
+        text: 고객 Azure Stack Hub 솔루션
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: 고객 하이브리드 클라우드 스토리
-      - url: /learn
-        text: Microsoft Learn 대화형 학습
-      - url: /learn/tv/
-        text: Microsoft Learn TV
-    - title: 빌드 및 운영을 위한 리소스
+      - url: /answers/products/
+        text: Microsoft Q&A 포럼
+    - title: 평가 및 학습
       links:
-      - url: /dotnet/azure/
-        text: Azure용 .NET 개발
       - url: https://github.com/likamrat/azure_arc
         text: Azure Arc 빠른 시작 가이드
+      - url: https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator
+        text: Azure IoT Edge AI 비디오 인텔리전스 솔루션 가속기
+      - url: https://labs.iotedge.dev/
+        text: Azure IoT Edge 실습 교육
+      - url: https://www.azureiotsolutions.com/Accelerators
+        text: Azure IoT 솔루션 가속기
+      - url: /azure-stack/asdk
+        text: Azure Stack 개발 키트
       - url: https://github.com/Azure/AzureStackHCI-EvalGuide
         text: Azure Stack HCI 평가 가이드
+      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
+        text: Azure Stack 하이브리드 앱 소개
       - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
         text: Azure IoT Edge 디바이스에 대해 인증됨
       - url: /samples/browse/
         text: 코드 샘플 브라우저
+      - url: https://docs.docker.com/
+        text: Docker 문서
       - url: https://www.youtube.com/watch?v=2lw8zOpJTn0
         text: Azure Stack 허브에서 Azure로 동적으로 크기 조정
-      - url: https://labs.iotedge.dev/
-        text: IoT Edge 실습 랩
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Vision AI Developer Kit
-      - url: /visualstudio/azure/
-        text: Visual Studio Azure 개발
-    - title: 지원 및 다른 리소스
-      links:
-      - url: https://azure.microsoft.com/blog/topics/hybrid/
-        text: Azure 하이브리드 블로그
-      - url: /answers/products/
-        text: Microsoft Q&A 포럼
+      - url: /learn
+        text: Microsoft Learn
