@@ -1,5 +1,5 @@
 ### YamlMime:Hub
-title: Azure 하이브리드 클라우드 설명서
+title: Azure 하이브리드 설명서
 summary: 글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 솔루션을 빌드 및 운영하기 위한 리소스입니다.
 brand: azure
 metadata:
@@ -9,13 +9,13 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 06/30/2020
-  ms.openlocfilehash: b888756accc1e538d358e91aec6740b392dafea0
-  ms.sourcegitcommit: 72dbbc933220a4e7273abf46ad3fc6032d122ca7
+  ms.date: 08/05/2020
+  ms.openlocfilehash: 09eca5be0d1b638b1ca5122c12f362ddde8559e8
+  ms.sourcegitcommit: e1bdde91a92840fe1da420148329fee36addc03e
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/31/2020
-  ms.locfileid: "87473798"
+  ms.lasthandoff: 08/06/2020
+  ms.locfileid: "87838518"
 highlightedContent:
   items:
   - title: 새 Azure Stack HCI 검색
