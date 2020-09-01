@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477340"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886818"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Azure 및 Azure Stack Hub를 사용하여 클라우드 간에 스케일링되는 앱 배포
 
@@ -68,7 +68,7 @@ ms.locfileid: "86477340"
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>사용자 지정 도메인 가져오기 및 DNS 구성
 
-도메인에 대한 DNS 영역 파일을 업데이트합니다. Azure AD는 사용자 지정 도메인 이름의 소유권을 확인합니다. Azure 내에서 Azure/Office 365/외부 DNS 레코드에 대해 [Azure DNS](/azure/dns/dns-getstarted-portal)를 사용하거나 [서로 다른 DNS 등록 기관](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)에서 DNS 항목을 추가합니다.
+도메인에 대한 DNS 영역 파일을 업데이트합니다. Azure AD는 사용자 지정 도메인 이름의 소유권을 확인합니다. Azure 내에서 Azure/Microsoft 365/외부 DNS 레코드에 대해 [Azure DNS](/azure/dns/dns-getstarted-portal)를 사용하거나 [서로 다른 DNS 등록 기관](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider)에서 DNS 항목을 추가합니다.
 
 1. 사용자 지정 도메인을 퍼블릭 등록자에 등록합니다.
 2. 도메인에 대한 도메인 이름 등록 기관에 로그인합니다. 승인된 관리자가 DNS를 업데이트해야 할 수 있습니다.
