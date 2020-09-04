@@ -9,13 +9,13 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 08/05/2020
-  ms.openlocfilehash: 09eca5be0d1b638b1ca5122c12f362ddde8559e8
-  ms.sourcegitcommit: e1bdde91a92840fe1da420148329fee36addc03e
+  ms.date: 09/02/2020
+  ms.openlocfilehash: 8df4847263d2632d35f0817752fbdf69afbe01d3
+  ms.sourcegitcommit: 36f2c0f6e8ed4512b76d77dde8c4e7473cc4719c
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/06/2020
-  ms.locfileid: "87838518"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "89410777"
 highlightedContent:
   items:
   - title: 새 Azure Stack HCI 검색
@@ -129,7 +129,7 @@ conceptualContent:
       text: Azure Event Hubs
     - url: /azure/azure-functions/
       itemType: overview
-      text: Azure Functions
+      text: Azure 기능
     - url: /azure/logic-apps/
       itemType: overview
       text: Azure Logic Apps
@@ -187,7 +187,7 @@ conceptualContent:
     - url: /azure/azure-arc/kubernetes/
       itemType: overview
       text: Azure Arc 사용 Kubernetes(미리 보기)
-    - url: /azure/azure-arc/
+    - url: /azure/azure-arc/servers
       itemType: overview
       text: Azure Arc 사용 서버(미리 보기)
     - url: /azure/automation/
@@ -268,6 +268,7 @@ conceptualContent:
 additionalContent:
   sections:
   - title: 하이브리드 솔루션
+    summary: 하이브리드 프로젝트를 살펴보고 다시 사용하기 위한 참고 자료와 예입니다.
     items:
     - title: 하이브리드 앱 패턴 및 솔루션 예
       links:
