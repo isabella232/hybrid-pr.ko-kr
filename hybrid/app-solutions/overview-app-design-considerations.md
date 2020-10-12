@@ -7,12 +7,12 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 8b975c7b99807490d446f557e84b6e0eabf34649
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477221"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852493"
 ---
 # <a name="hybrid-app-design-considerations"></a>하이브리드 앱 디자인 고려 사항
 
@@ -231,4 +231,4 @@ Microsoft Azure는 유일하게 일관적인 하이브리드 클라우드입니�
 
 - [하이브리드 클라우드](https://azure.microsoft.com/overview/hybrid-cloud/)
 - [하이브리드 클라우드 앱](https://azure.microsoft.com/solutions/hybrid-cloud-app/)
-- [클라우드 일관성을 위한 Azure Resource Manager 템플릿 개발](https://aka.ms/consistency)
+- [클라우드 일관성을 위한 Azure Resource Manager 템플릿 개발](/azure/azure-resource-manager/templates/templates-cloud-consistency)

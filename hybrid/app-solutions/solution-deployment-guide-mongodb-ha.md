@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: def9abaa2a7231648f11453f66119399be015a4d
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477272"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852510"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Azure 및 Azure Stack Hub에 고가용성 MongoDB 솔루션 배포
 
@@ -105,5 +105,5 @@ ms.locfileid: "86477272"
 ## <a name="next-steps"></a>다음 단계
 
 - DR Azure Stack Hub에서 점프 상자 VM을 사용하도록 설정한 경우 SSH를 통해 연결하고 mongo CLI를 설치하여 MongoDB 클러스터와 상호 작용할 수 있습니다. MongoDB와 상호 작용하는 방법에 대한 자세한 내용은 [mongo Shell](https://docs.mongodb.com/manual/mongo/)을 참조하세요.
-- 하이브리드 클라우드 앱에 대해 자세히 알아보려면 [하이브리드 클라우드 솔루션](https://aka.ms/azsdevtutorials)을 참조하세요.
+- 하이브리드 클라우드 앱에 대해 자세히 알아보려면 [하이브리드 클라우드 솔루션](/azure-stack/user/)을 참조하세요.
 - [GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns)에서 코드를 이 샘플로 수정합니다.
