@@ -1,8 +1,8 @@
-- name: Azure 하이브리드 설명서
+- name: 하이브리드 및 다중 클라우드 솔루션 설명서
   href: index.yml
 - name: 개요
   items:
-    - name: 하이브리드 패턴 및 솔루션 예
+    - name: 패턴 및 솔루션 예
       href: overview-patterns-solution-examples.md
 - name: 패턴
   items:
@@ -58,7 +58,7 @@
       href: 'https://aka.ms/edgetrainingdeploy'
 - name: 개념
   items:
-    - name: 하이브리드 앱 디자인 고려 사항
+    - name: 앱 디자인 고려 사항
       href: overview-app-design-considerations.md
 - name: 관련 항목
   items:

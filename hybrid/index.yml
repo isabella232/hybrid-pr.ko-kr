@@ -1,21 +1,21 @@
 ### YamlMime:Hub
-title: Azure 하이브리드 설명서
-summary: 글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 솔루션을 빌드 및 운영하기 위한 리소스입니다.
+title: Azure 하이브리드 및 다중 클라우드 설명서
+summary: 글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 리소스입니다.
 brand: azure
 metadata:
-  title: Azure 하이브리드 클라우드 설명서
-  description: 글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 솔루션을 빌드 및 운영하기 위한 리소스입니다.
+  title: Azure 하이브리드 및 다중 클라우드 클라우드 설명서
+  description: 글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 리소스입니다.
   ms.service: multiple
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 09/02/2020
-  ms.openlocfilehash: 823d9f2f8823c47854647ce378c6866978df7feb
-  ms.sourcegitcommit: 6be3914e28349883dba004697dc550a6fd1b7393
+  ms.date: 11/16/2020
+  ms.openlocfilehash: 23c1d6e1444e637a8e012b2628d3dfbafe903b3e
+  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 10/30/2020
-  ms.locfileid: "93062919"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94873026"
 highlightedContent:
   items:
   - title: Azure Modular 데이터 센터 소개
@@ -43,8 +43,8 @@ highlightedContent:
     itemType: video
     url: https://mybuild.microsoft.com/sessions?q=%2522%2520intelligent%2520edge%2520%2522%2520%2522%2520sql%2520edge%2520%2522
 productDirectory:
-  title: Azure 하이브리드 클라우드 플랫폼
-  summary: 하이브리드 솔루션을 빌드하고 운영하는 데 사용되는 하이브리드 지원 플랫폼입니다.
+  title: Azure 하이브리드 및 다중 클라우드 플랫폼
+  summary: 하이브리드 및 다중 클라우드 솔루션을 빌드하고 운영하는 데 사용되는 플랫폼입니다.
   items:
   - title: Azure 글로벌 퍼블릭/소버린 클라우드 플랫폼입니다.
     imageSrc: media/index/logo_azure.svg
@@ -70,8 +70,8 @@ productDirectory:
     - url: /windows/iot-core/
       text: IoT용 Windows
 conceptualContent:
-  title: 하이브리드 사용 기술
-  summary: 하이브리드 솔루션을 빌드 및 운영하기 위한 서비스 및 제품입니다.
+  title: 하이브리드 및 다중 클라우드 기술
+  summary: 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 서비스 및 제품입니다.
   items:
   - title: AI + Machine Learning
     links:
@@ -155,7 +155,7 @@ conceptualContent:
       text: Azure Stack Hub의 Event Hubs
     - url: /azure-stack/user/iot-hub-overview
       itemType: overview
-      text: Azure Stack Hub의 IoT Hub
+      text: Azure Stack Hub의 IoT Hub(미리 보기)
   - title: Microsoft Edge
     links:
     - url: /azure/databox-online/data-box-gateway-overview
@@ -164,6 +164,9 @@ conceptualContent:
     - url: /azure/iot-edge/
       itemType: overview
       text: Azure IoT Edge
+    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+      itemType: overview
+      text: Kubernetes의 Azure IoT Edge
     - url: /azure-sphere
       itemType: overview
       text: Azure Sphere
@@ -173,9 +176,6 @@ conceptualContent:
     - url: /azure/azure-sql-edge/overview
       itemType: overview
       text: Azure SQL Edge(미리 보기)
-    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
-      itemType: overview
-      text: Kubernetes의 IoT Edge
     - url: /windows/iot-core/
       itemType: overview
       text: IoT용 Windows
@@ -273,16 +273,16 @@ conceptualContent:
       text: Azure FXT Edge Filer
 additionalContent:
   sections:
-  - title: 하이브리드 솔루션
-    summary: 하이브리드 프로젝트를 살펴보고 다시 사용하기 위한 참고 자료와 예입니다.
+  - title: 하이브리드 및 다중 클라우드 솔루션
+    summary: 하이브리드 및 다중 클라우드 프로젝트를 살펴보고 다시 사용하기 위한 참고 자료와 예입니다.
     items:
-    - title: 하이브리드 앱 패턴 및 솔루션 예
+    - title: 앱 패턴 및 솔루션 예
       links:
       - url: ./app-solutions/overview-patterns-solution-examples.md
         text: 패턴 및 솔루션 예로는 무엇이 있습니까?
       - url: ./app-solutions/overview-app-design-considerations.md
-        text: 하이브리드 앱 디자인 고려 사항
-    - title: 하이브리드 앱 패턴 살펴보기
+        text: 앱 디자인 고려 사항
+    - title: 앱 패턴 살펴보기
       links:
       - url: ./app-solutions/pattern-cross-cloud-scale.md
         text: 클라우드 간 크기 조정
@@ -292,7 +292,7 @@ additionalContent:
         text: 고객 수 검색(소매)
       - url: ./app-solutions/pattern-geo-distributed.md
         text: 지리적으로 분산된 앱
-    - title: 하이브리드 앱 솔루션 배포 예
+    - title: 앱 솔루션 배포 예
       links:
       - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
         text: 클라우드 간 크기 조정
@@ -365,7 +365,7 @@ additionalContent:
     - title: 네트워킹
       links:
       - url: /learn/modules/design-a-hybrid-network-architecture/
-        text: Azure에서 하이브리드 네트워크 아키텍처 설계
+        text: Azure에서 하이브리드 네트워크 아키텍처 디자인
       - url: /learn/modules/expose-hybrid-services-with-azure-relay/
         text: Azure Relay로 안전하게 하이브리드 서비스 노출
       - url: /learn/modules/implement-hybrid-network-infrastructure/
