@@ -9,12 +9,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 10/31/2019
-  ms.openlocfilehash: f51256c555011744f847e457b8bac46a1b5c4b14
-  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
+  ms.openlocfilehash: 388cfb13249491275d7223415f26f20c17fe8f54
+  ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/18/2020
-  ms.locfileid: "94872984"
+  ms.lasthandoff: 12/09/2020
+  ms.locfileid: "96901544"
 landingContent:
 - title: 하이브리드 및 다중 클라우드 패턴 및 솔루션 정보
   linkLists:
@@ -70,3 +70,13 @@ landingContent:
     links:
     - text: 솔루션 배포 가이드
       url: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+- title: 고가용성 Kubernetes 클러스터 시나리오
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: 패턴
+      url: pattern-highly-available-kubernetes.md
+  - linkListType: tutorial
+    links:
+    - text: 솔루션 배포 가이드
+      url: solution-deployment-guide-highly-available-kubernetes.md

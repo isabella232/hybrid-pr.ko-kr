@@ -26,6 +26,8 @@
           href: pattern-cross-cloud-scale-onprem-data.md
         - name: 고객 수 검색(소매)
           href: pattern-retail-footfall-detection.md
+        - name: 고가용성 Kubernetes 클러스터
+          href: pattern-highly-available-kubernetes.md
         - name: 에지에서 품절 검색
           href: pattern-out-of-stock-at-edge.md
 - name: 솔루션 배포 가이드
@@ -40,6 +42,8 @@
       href: solution-deployment-guide-retail-footfall-detection.md
     - name: 지리적으로 분산된 앱
       href: solution-deployment-guide-geo-distributed.md
+    - name: 고가용성 Kubernetes 클러스터
+      href: solution-deployment-guide-highly-available-kubernetes.md
     - name: 하이브리드 연결
       href: solution-deployment-guide-connectivity.md
     - name: 하이브리드 ID
