@@ -7,14 +7,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
-ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
+ms.openlocfilehash: 0f857515a44ece7f967ade3dee8f493481709851
+ms.sourcegitcommit: c890f2c5e5e5f9f93c921f02dd1a6ca5026d5289
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91852476"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091805"
 ---
-# <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Azure 및 Azure Stack Hub에 SQL Server 2016 가용성 그룹 배포
+# <a name="deploy-a-sql-server-2016-availability-group-across-two-azure-stack-hub-environments"></a>두 가지 Azure Stack Hub 환경에서 SQL Server 2016 가용성 그룹 배포
 
 이 문서에서는 두 개의 Azure Stack Hub 환경에서 비동기 DR(재해 복구) 사이트를 사용하여 기본 HA(고가용성) SQL Server 2016 Enterprise 클러스터를 자동으로 배포하는 과정을 안내합니다. SQL Server 2016 및 고가용성에 대한 자세한 내용은 [Always On 가용성 그룹: 고가용성 및 재해 복구 솔루션](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016)을 참조하세요.
 

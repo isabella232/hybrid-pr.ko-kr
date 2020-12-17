@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
+ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477170"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901493"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Azure 및 Azure Stack Hub를 사용하여 AI 기반 발걸음 감지 솔루션 배포
 
@@ -26,7 +26,7 @@ ms.locfileid: "86477170"
 > - Edge에서 유추를 위해 Custom Vision AI Dev Kit를 사용합니다.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![하이브리드 핵심 요소 다이어그램](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub는 Azure의 확장입니다. Azure Stack Hub는 온-프레미스 환경에 클라우드 컴퓨팅의 민첩성과 혁신을 제공하여 어디서나 하이브리드 앱을 빌드하고 배포할 수 있는 유일한 하이브리드 클라우드를 사용하도록 설정합니다.  
 > 
 > [하이브리드 앱 디자인 고려 사항](overview-app-design-considerations.md) 문서는 하이브리드 앱 디자인, 배포 및 운영에 대한 소프트웨어 품질(배치, 확장성, 가용성, 복원력, 관리 효율성 및 보안)의 핵심 요소를 검토합니다. 디자인 고려 사항은 하이브리드 앱 디자인을 최적화하고 프로덕션 환경에서 문제를 최소화하는 데 도움이 됩니다.
@@ -44,7 +44,7 @@ ms.locfileid: "86477170"
 - 디렉터리에 두 개의 서비스 주체를 만듭니다.
   - 하나는 Azure 구독 범위에서 액세스할 수 있는 Azure 리소스에 사용하도록 설정합니다.
   - 하나는 Azure Stack Hub 구독 범위에서 액세스할 수 있는 Azure Stack Hub 리소스에 사용하도록 설정합니다.
-  - 서비스 주체를 만들고 액세스 권한을 부여하는 방법에 대한 자세한 내용은 [앱 ID를 사용하여 리소스에 액세스](/azure-stack/operator/azure-stack-create-service-principals.md)를 참조하세요. Azure CLI를 사용하는 것을 선호하는 경우 [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)를 참조하세요.
+  - 서비스 주체를 만들고 액세스 권한을 부여하는 방법에 대한 자세한 내용은 [앱 ID를 사용하여 리소스에 액세스](/azure-stack/operator/azure-stack-create-service-principals.md)를 참조하세요. Azure CLI를 사용하는 것을 선호하는 경우 [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)를 참조하세요.
 - Azure 또는 Azure Stack Hub에 Azure Cognitive Services를 배포합니다.
   - 먼저 [Cognitive Services에 대해 자세히 알아봅니다](https://azure.microsoft.com/services/cognitive-services/).
   - 그런 다음, [Azure Cognitive Services를 Azure Stack Hub에 배포](/azure-stack/user/azure-stack-solution-template-cognitive-services.md)를 방문하여 Azure Stack Hub에 Cognitive Services를 배포합니다. 먼저 미리 보기에 액세스하려면 등록해야 합니다.
@@ -152,29 +152,29 @@ Porter CLI를 사용하여 자격 증명 집합을 생성한 다음, 카메라 �
 
 이제 카메라에서 Azure Stream Analytics로 데이터가 이동하기 때문에 Power BI와 통신할 수 있도록 수동으로 권한을 부여해야 합니다.
 
-1. Azure Portal에서 **모든 리소스**를 열고 *process-footfall\[yoursuffix\]* 작업을 엽니다.
+1. Azure Portal에서 **모든 리소스** 를 열고 *process-footfall\[yoursuffix\]* 작업을 엽니다.
 
 2. Stream Analytics 작업 창의 **작업 토폴로지** 섹션에서 **출력** 옵션을 선택합니다.
 
 3. **traffic-output** 출력 싱크를 선택합니다.
 
-4. **권한 갱신**을 선택하고 사용자의 Power BI 계정에 로그인합니다.
+4. **권한 갱신** 을 선택하고 사용자의 Power BI 계정에 로그인합니다.
   
     ![Power BI에서 권한 부여 프롬프트 갱신](./media/solution-deployment-guide-retail-footfall-detection/image2.png)
 
 5. 출력 설정을 저장합니다.
 
-6. **개요** 창으로 이동하고 **시작**을 선택하여 Power BI로 데이터를 보내기 시작합니다.
+6. **개요** 창으로 이동하고 **시작** 을 선택하여 Power BI로 데이터를 보내기 시작합니다.
 
-7. 작업 출력 시작 시간으로 **지금**을 선택하고 **시작**을 선택합니다. 알림 표시줄에서 작업 상태를 볼 수 있습니다.
+7. 작업 출력 시작 시간으로 **지금** 을 선택하고 **시작** 을 선택합니다. 알림 표시줄에서 작업 상태를 볼 수 있습니다.
 
 ## <a name="create-a-power-bi-dashboard"></a>Power BI 대시보드 만들기
 
 1. 작업이 성공하면 [Power BI](https://powerbi.com/)로 이동하여 회사 또는 학교 계정으로 로그인합니다. Stream Analytics 작업 쿼리가 결과를 출력 중이면 앞에서 만든 *footfall-dataset* 데이터 세트가 **데이터 세트** 탭에 있는 것입니다.
 
-2. Power BI 작업 영역에서 **+ 만들기**를 선택하여 *발걸음 분석*이라는 새 대시보드를 만듭니다.
+2. Power BI 작업 영역에서 **+ 만들기** 를 선택하여 *발걸음 분석* 이라는 새 대시보드를 만듭니다.
 
-3. 창 맨 위에서 **타일 추가**를 선택합니다. **사용자 지정 스트리밍 데이터**를 선택하고 **다음**을 선택합니다. **데이터 세트** 아래에서 **footfall-dataset**를 선택합니다. **시각화 유형** 드롭다운에서 **카드**를 선택하고 **필드**에 **age**를 추가합니다. **다음**을 선택하여 타일 이름을 입력하고, **적용**을 선택하여 타일을 만듭니다.
+3. 창 맨 위에서 **타일 추가** 를 선택합니다. **사용자 지정 스트리밍 데이터** 를 선택하고 **다음** 을 선택합니다. **데이터 세트** 아래에서 **footfall-dataset** 를 선택합니다. **시각화 유형** 드롭다운에서 **카드** 를 선택하고 **필드** 에 **age** 를 추가합니다. **다음** 을 선택하여 타일 이름을 입력하고, **적용** 을 선택하여 타일을 만듭니다.
 
 4. 필요에 따라 필드와 카드를 더 추가할 수 있습니다.
 
@@ -194,5 +194,5 @@ porter uninstall footfall-camera –tag intelligentedge/footfall-camera-deployme
 
 ## <a name="next-steps"></a>다음 단계
 
-- [하이브리드 앱 디자인 고려 사항]에 대해 자세히 알아보세요(overview-app-design-considerations.md).
+- [하이브리드 앱 디자인 고려 사항](overview-app-design-considerations.md)에 대해 자세히 알아보기
 - [GitHub에서 이 샘플의 코드](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/footfall-analysis)를 검토하고 개선을 제안하세요.

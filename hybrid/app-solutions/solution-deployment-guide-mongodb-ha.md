@@ -7,14 +7,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: def9abaa2a7231648f11453f66119399be015a4d
-ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
+ms.openlocfilehash: 624f032def509d8e42d55807d72176e5fce85910
+ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91852510"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901510"
 ---
-# <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Azure 및 Azure Stack Hub에 고가용성 MongoDB 솔루션 배포
+# <a name="deploy-a-highly-available-mongodb-solution-across-two-azure-stack-hub-environments"></a>두 Azure Stack Hub 환경에 고가용성 MongoDB 솔루션 배포
 
 이 문서에서는 두 개의 Azure Stack Hub 환경에서 DR(재해 복구) 사이트를 사용하여 기본 HA(고가용성) MongoDB 클러스터를 자동으로 배포하는 과정을 안내합니다. MongoDB 및 고가용성에 대한 자세한 내용은 [복제본 세트 멤버](https://docs.mongodb.com/manual/core/replica-set-members/)를 참조하세요.
 
