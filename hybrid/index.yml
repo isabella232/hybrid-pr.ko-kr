@@ -9,18 +9,18 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 11/16/2020
-  ms.openlocfilehash: e56d862007c6fdf6d1754bdba78b11b713ebe56a
-  ms.sourcegitcommit: e4ecad490940e5951739b074c36188886e8f426c
+  ms.date: 01/27/2020
+  ms.openlocfilehash: 2faa91477f1c27b59bf119c5d09b8b34c58b1830
+  ms.sourcegitcommit: 66a4168541ad9cc005962b08022cf3c3bbdf33e2
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/11/2021
-  ms.locfileid: "98104228"
+  ms.lasthandoff: 01/28/2021
+  ms.locfileid: "98925082"
 highlightedContent:
   items:
   - title: Azure Modular 데이터 센터 소개
     itemType: video
-    url: https://azure.microsoft.com/blog/introducing-the-microsoft-azure-modular-datacenter/
+    url: https://azure.microsoft.com/resources/videos/azure-modular-datacenter/
   - title: 'Ignite 2020: 하이브리드 세션'
     itemType: video
     url: https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q=hybrid
@@ -54,12 +54,14 @@ productDirectory:
   - title: 호스팅, 온-프레미스 및 모바일 데이터 센터를 위한 프라이빗 클라우드 플랫폼입니다.
     imageSrc: media/index/azure-stack-hub.svg
     links:
+    - url: /azure-stack/mdc
+      text: Azure Modular Datacenter
+    - url: /azure-stack/hci
+      text: Azure Stack HCI
     - url: /azure-stack#azure-stack-hub
       text: Azure Stack Hub
-    - url: /azure-stack#azure-stack-hub
-      text: Azure Modular Data Center
-    - url: /azure-stack#azure-stack-hci
-      text: Azure Stack HCI
+    - url: /azure-stack/ruggedized
+      text: Azure Stack Hub Ruggedized
   - title: 디바이스용 인텔리전트 에지 플랫폼
     imageSrc: media/index/intelligent.svg
     links:
