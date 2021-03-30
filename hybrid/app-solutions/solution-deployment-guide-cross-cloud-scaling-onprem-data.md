@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
-ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
+ms.openlocfilehash: 0989859fd68847932d3e69defee59740a2bffd44
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92353481"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895400"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>클라우드 간 크기를 조정하는 온-프레미스 데이터를 사용하는 하이브리드 앱 배포
 
@@ -47,7 +47,7 @@ ms.locfileid: "92353481"
 이 자습서에서는 글로벌 Azure 및 Azure Stack Hub에 대한 기본 지식이 있다고 가정합니다. 자습서를 시작하기 전에 자세히 알아보려면 다음 문서를 검토하세요.
 
 - [Azure 소개](https://azure.microsoft.com/overview/what-is-azure/)
-- [Azure Stack Hub 주요 개념](/azure-stack/operator/azure-stack-overview.md)
+- [Azure Stack Hub 주요 개념](/azure-stack/operator/azure-stack-overview)
 
 이 자습서에서는 Azure 구독이 있다고 가정합니다. 구독이 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/)을 만드세요.
 
@@ -55,7 +55,7 @@ ms.locfileid: "92353481"
 
 이 솔루션을 시작하기 전에 다음 요구 사항을 충족하는지 확인하십시오.
 
-- ASDK(Azure Stack Development Kit) 또는 Azure Stack Hub 통합 시스템 구독 ASDK을 배포하려면 [설치 프로그램을 사용하여 ASDK 배포](/azure-stack/asdk/asdk-install.md)의 지침을 참조하세요.
+- ASDK(Azure Stack Development Kit) 또는 Azure Stack Hub 통합 시스템 구독 ASDK을 배포하려면 [설치 프로그램을 사용하여 ASDK 배포](/azure-stack/asdk/asdk-install)의 지침을 참조하세요.
 - Azure Stack Hub 설치에는 다음이 설치되어 있어야 합니다.
   - Azure App Service. Azure Stack Hub 운영자와 협력하여 Azure App Service를 환경에 배포하고 구성하세요. 이 자습서에서는 App Service에 사용 가능한 전용 작업자 역할이 하나(1) 이상 있어야 합니다.
   - Windows Server 2016 이미지.
@@ -82,7 +82,7 @@ ms.locfileid: "92353481"
 
 4. **체험 SQL Server 라이선스: Windows Server의 SQL Server 2017 Developer** 에서 **만들기** 를 선택합니다.
 
-5. **기본 > 기본 설정 구성** 에서 VM(가상 머신)의 **이름** , SQL Server SA의 **사용자 이름** , SA의 **암호** 를 입력합니다.  **구독** 드롭다운 목록에서 배포하려는 구독을 선택합니다. **리소스 그룹** 의 경우 **기존 항목 선택** 을 사용하고 Azure Stack Hub 웹앱과 동일한 리소스 그룹에 VM을 배치합니다.
+5. **기본 > 기본 설정 구성** 에서 VM(가상 머신)의 **이름**, SQL Server SA의 **사용자 이름**, SA의 **암호** 를 입력합니다.  **구독** 드롭다운 목록에서 배포하려는 구독을 선택합니다. **리소스 그룹** 의 경우 **기존 항목 선택** 을 사용하고 Azure Stack Hub 웹앱과 동일한 리소스 그룹에 VM을 배치합니다.
 
     ![Azure Stack Hub 사용자 포털에서 VM에 대한 기본 설정 구성](media/solution-deployment-guide-hybrid/image3.png)
 
@@ -90,16 +90,16 @@ ms.locfileid: "92353481"
 
 7. **설정 > 옵션 기능 구성** 에서 다음 설정을 구성합니다.
 
-   - **스토리지 계정** : 필요한 경우 새 계정을 만듭니다.
-   - **가상 네트워크** :
+   - **스토리지 계정**: 필요한 경우 새 계정을 만듭니다.
+   - **가상 네트워크**:
 
      > [!Important]  
      > VPN 게이트웨이와 동일한 가상 네트워크에 SQL Server VM이 배포되어 있는지 확인합니다.
 
-   - **공용 IP 주소** : 기본 설정을 사용합니다.
-   - **네트워크 보안 그룹** : (NSG). 새 NSG를 만듭니다.
-   - **확장 및 모니터링** : 기본 설정을 유지합니다.
-   - **진단 스토리지 계정** : 필요한 경우 새 계정을 만듭니다.
+   - **공용 IP 주소**: 기본 설정을 사용합니다.
+   - **네트워크 보안 그룹**: (NSG). 새 NSG를 만듭니다.
+   - **확장 및 모니터링**: 기본 설정을 유지합니다.
+   - **진단 스토리지 계정**: 필요한 경우 새 계정을 만듭니다.
    - **확인** 을 선택하여 구성을 저장합니다.
 
      ![Azure Stack Hub 사용자 포털에서 선택적 VM 기능 구성](media/solution-deployment-guide-hybrid/image4.png)
@@ -139,7 +139,7 @@ Azure App Service는 웹앱 실행 및 관리를 간소화합니다. Azure Stack
 
 사용자가 앱에 액세스할 수 있도록 Azure Stack Hub의 App Service는 공용 인터넷에서 라우팅할 수 있어야 합니다. Azure Stack Hub를 인터넷에서 액세스할 수 있는 경우 Azure Stack Hub 웹앱의 공용 IP 주소 또는 URL을 적어둡니다.
 
-ASDK를 사용하는 경우 가상 환경 외부에 App Service가 노출되도록 [정적 NAT 매핑을 구성](/azure-stack/operator/azure-stack-create-vpn-connection-one-node.md#configure-the-nat-vm-on-each-asdk-for-gateway-traversal)할 수 있습니다.
+ASDK를 사용하는 경우 가상 환경 외부에 App Service가 노출되도록 [정적 NAT 매핑을 구성](/azure-stack/operator/azure-stack-create-vpn-connection-one-node#configure-the-nat-vm-on-each-asdk-for-gateway-traversal)할 수 있습니다.
 
 ### <a name="connect-a-web-app-in-azure-to-a-hybrid-network"></a>Azure의 웹앱을 하이브리드 네트워크에 연결
 
@@ -308,7 +308,7 @@ App Service Environment에서 웹앱을 만드는 경우 하나의 인스턴스�
 
     ![Azure App Service에서 자동 크기 조정 사용](media/solution-deployment-guide-hybrid/image17.png)
 
-3. **자동 크기 조정 설정 이름** 에 이름을 입력합니다. **기본** 자동 크기 조정 규칙의 경우 **메트릭 기준 크기 조정** 을 선택합니다. **인스턴스 제한** 을 **최소: 1** , **최대: 10** , **기본값: 1** 로 설정합니다.
+3. **자동 크기 조정 설정 이름** 에 이름을 입력합니다. **기본** 자동 크기 조정 규칙의 경우 **메트릭 기준 크기 조정** 을 선택합니다. **인스턴스 제한** 을 **최소: 1**, **최대: 10**, **기본값: 1** 로 설정합니다.
 
     ![Azure App Service에서 자동 크기 조정 구성](media/solution-deployment-guide-hybrid/image18.png)
 
@@ -380,7 +380,7 @@ Azure Portal에서 Traffic Manager 프로필을 만든 다음, 클라우드 간 
 2. **네트워킹** 을 선택합니다.
 3. **Traffic Manager 프로필** 을 선택하고 다음 설정을 구성합니다.
 
-   - **이름** 에 사용자의 프로필에 사용할 이름을 입력합니다. 이 이름은 trafficmanager.net 영역에서 **고유해야 하며** , 새 DNS 이름(예: northwindstore.trafficmanager.net)을 만드는 데 사용됩니다.
+   - **이름** 에 사용자의 프로필에 사용할 이름을 입력합니다. 이 이름은 trafficmanager.net 영역에서 **고유해야 하며**, 새 DNS 이름(예: northwindstore.trafficmanager.net)을 만드는 데 사용됩니다.
    - **라우팅 방법** 으로 **가중치** 를 선택합니다.
    - **구독** 에는 이 프로필을 만들 구독을 선택합니다.
    - **리소스 그룹** 에서 이 프로필의 새 리소스 그룹을 만듭니다.

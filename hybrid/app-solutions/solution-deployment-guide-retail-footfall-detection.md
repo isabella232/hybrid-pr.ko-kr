@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: caedbd4758b9ae8c93cf9bb625ed9aac68bfa196
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901493"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895369"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Azure 및 Azure Stack Hub를 사용하여 AI 기반 발걸음 감지 솔루션 배포
 
@@ -37,22 +37,22 @@ ms.locfileid: "96901493"
 
 - [발걸음 감지 패턴](pattern-retail-footfall-detection.md) 항목을 검토합니다.
 - 다음을 통해 ASDK(Azure Stack Development Kit) 또는 Azure Stack Hub 통합 시스템 인스턴스에 대한 사용자 액세스 권한을 확보합니다.
-  - [Azure Stack Hub 리소스 공급자에 대한 Azure App Service](/azure-stack/operator/azure-stack-app-service-overview.md)를 설치합니다. 설치하려면 Azure Stack Hub 인스턴스에 대한 운영자 액세스 권한이 있거나 관리자에게 문의해야 합니다.
+  - [Azure Stack Hub 리소스 공급자에 대한 Azure App Service](/azure-stack/operator/azure-stack-app-service-overview)를 설치합니다. 설치하려면 Azure Stack Hub 인스턴스에 대한 운영자 액세스 권한이 있거나 관리자에게 문의해야 합니다.
   - App Service 및 스토리지 할당량을 제공하는 제품을 구독합니다. 제품을 만들려면 운영자 액세스 권한이 필요합니다.
 - Azure 구독에 대한 액세스 권한을 얻습니다.
   - Azure 구독이 없으면 시작하기 전에 [평가판 계정](https://azure.microsoft.com/free/)에 등록하세요.
 - 디렉터리에 두 개의 서비스 주체를 만듭니다.
   - 하나는 Azure 구독 범위에서 액세스할 수 있는 Azure 리소스에 사용하도록 설정합니다.
   - 하나는 Azure Stack Hub 구독 범위에서 액세스할 수 있는 Azure Stack Hub 리소스에 사용하도록 설정합니다.
-  - 서비스 주체를 만들고 액세스 권한을 부여하는 방법에 대한 자세한 내용은 [앱 ID를 사용하여 리소스에 액세스](/azure-stack/operator/azure-stack-create-service-principals.md)를 참조하세요. Azure CLI를 사용하는 것을 선호하는 경우 [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)를 참조하세요.
+  - 서비스 주체를 만들고 액세스 권한을 부여하는 방법에 대한 자세한 내용은 [앱 ID를 사용하여 리소스에 액세스](/azure-stack/operator/azure-stack-create-service-principals)를 참조하세요. Azure CLI를 사용하는 것을 선호하는 경우 [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)를 참조하세요.
 - Azure 또는 Azure Stack Hub에 Azure Cognitive Services를 배포합니다.
   - 먼저 [Cognitive Services에 대해 자세히 알아봅니다](https://azure.microsoft.com/services/cognitive-services/).
-  - 그런 다음, [Azure Cognitive Services를 Azure Stack Hub에 배포](/azure-stack/user/azure-stack-solution-template-cognitive-services.md)를 방문하여 Azure Stack Hub에 Cognitive Services를 배포합니다. 먼저 미리 보기에 액세스하려면 등록해야 합니다.
+  - 그런 다음, [Azure Cognitive Services를 Azure Stack Hub에 배포](/azure-stack/user/azure-stack-solution-template-cognitive-services)를 방문하여 Azure Stack Hub에 Cognitive Services를 배포합니다. 먼저 미리 보기에 액세스하려면 등록해야 합니다.
 - 구성되지 않은 Azure Custom Vision AI Dev Kit를 복제하거나 다운로드합니다. 자세한 내용은 [Vision AI DevKit](https://azure.github.io/Vision-AI-DevKit-Pages/)를 참조하세요.
 - Power BI 계정에 등록합니다.
 - Azure Cognitive Services Face API 구독 키 및 엔드포인트 URL. [Cognitive Services 체험하기](https://azure.microsoft.com/try/cognitive-services/?api=face-api) 평가판을 통해 두 가지를 모두 얻을 수 있습니다. 또는 [Cognitive Services 계정 만들기](/azure/cognitive-services/cognitive-services-apis-create-account)의 지침을 따르세요.
 - 다음 개발 리소스를 설치합니다.
-  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
+  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). Porter를 사용하면 제공되는 CNAB 번들 매니페스트를 사용하여 클라우드 앱을 배포할 수 있습니다.
   - [Visual Studio Code](https://code.visualstudio.com/)
