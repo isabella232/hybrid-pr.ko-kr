@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: 9fa2c351d2c13d85fe1adb17a35e165de96ea2a2
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886835"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895434"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>지리적으로 분산된 앱에서 Azure 및 Azure Stack Hub를 사용하여 트래픽 전달
 
@@ -50,18 +50,18 @@ ms.locfileid: "88886835"
 
 분산된 앱 공간을 빌드하기 전에 다음 사항을 파악하는 것이 좋습니다.
 
-- **앱의 사용자 지정 도메인:** 고객이 앱에 액세스하는 데 사용할 사용자 지정 도메인 이름은 무엇인가요? 샘플 앱의 경우 사용자 지정 도메인 이름은 *www\.scalableasedemo.com*입니다.
+- **앱의 사용자 지정 도메인:** 고객이 앱에 액세스하는 데 사용할 사용자 지정 도메인 이름은 무엇인가요? 샘플 앱의 경우 사용자 지정 도메인 이름은 *www\.scalableasedemo.com* 입니다.
 
-- **트래픽 관리자 도메인:** 도메인 이름은 [Azure Traffic Manager 프로필](/azure/traffic-manager/traffic-manager-manage-profiles)을 만들 때 선택합니다. 이 이름은 *trafficmanager.net* 접미사와 결합되어 Traffic Manager에서 관리되는 도메인 항목을 등록합니다. 샘플 앱의 경우 선택한 이름은 *scalable-ase-demo*입니다. 결과적으로 Traffic Manager에서 관리되는 전체 도메인 이름은 *scalable-ase-demo.trafficmanager.net*입니다.
+- **트래픽 관리자 도메인:** 도메인 이름은 [Azure Traffic Manager 프로필](/azure/traffic-manager/traffic-manager-manage-profiles)을 만들 때 선택합니다. 이 이름은 *trafficmanager.net* 접미사와 결합되어 Traffic Manager에서 관리되는 도메인 항목을 등록합니다. 샘플 앱의 경우 선택한 이름은 *scalable-ase-demo* 입니다. 결과적으로 Traffic Manager에서 관리되는 전체 도메인 이름은 *scalable-ase-demo.trafficmanager.net* 입니다.
 
 - **앱 공간을 크기 조정하는 전략:** 애플리케이션 공간을 단일 지역, 여러 지역 또는 두 가지를 혼합한 App Service 환경 중 어디에 분산할 것인지 결정합니다. 고객 트래픽이 생성될 것으로 예상되는 위치와 백 엔드 인프라를 지원하는 앱의 나머지 부분이 스케일링되어야 하는 범위를 감안하여 결정해야 합니다. 예를 들어 100% 상태 비저장 앱의 경우 Azure 지역마다 여러 App Service 환경을 조합하여 앱을 대규모로 스케일링할 수 있으며, 여러 Azure 지역에 배포된 App Service 환경을 통해 더욱 크게 스케일링할 수 있습니다. 고객은 15개 이상의 글로벌 Azure 지역 중에 선택하여 진정한 글로벌 하이퍼스케일 앱 공간을 구축할 수 있습니다. 여기서 사용되는 샘플 앱의 경우 세 가지 App Service 환경을 단일 Azure 지역(미국 중남부)에 만들었습니다.
 
-- **App Service 환경의 명명 규칙:** App Service 환경마다 고유한 이름이 필요합니다. 하나 또는 두 개의 App Service 환경 외에도, 각 App Service 환경을 식별하는 데 도움이 되는 명명 규칙이 있는 것이 좋습니다. 여기서 사용하는 샘플 앱의 경우 간단한 명명 규칙을 사용했습니다. 세 가지 App Service 환경 이름은 *fe1ase*, *fe2ase* 및 *fe3ase*입니다.
+- **App Service 환경의 명명 규칙:** App Service 환경마다 고유한 이름이 필요합니다. 하나 또는 두 개의 App Service 환경 외에도, 각 App Service 환경을 식별하는 데 도움이 되는 명명 규칙이 있는 것이 좋습니다. 여기서 사용하는 샘플 앱의 경우 간단한 명명 규칙을 사용했습니다. 세 가지 App Service 환경 이름은 *fe1ase*, *fe2ase* 및 *fe3ase* 입니다.
 
-- **앱에 대한 명명 규칙:** 앱의 여러 인스턴스가 배포되기 때문에 배포된 앱의 인스턴스마다 이름이 필요합니다. Power Apps용 App Service Environment에서는 동일한 앱 이름을 여러 환경에 사용할 수 있습니다. App Service 환경마다 고유한 도메인 접미사가 있으므로 개발자는 각 환경에서 정확히 동일한 앱 이름을 다시 사용하도록 선택할 수 있습니다. 예를 들어 개발자가 앱 이름을 *myapp.foo1.p.azurewebsites.net*, *myapp.foo2.p.azurewebsites.net*, *myapp.foo3.p.azurewebsites.net* 등으로 지정할 수 있습니다. 여기에서 사용되는 앱의 경우 각 앱 인스턴스에 고유한 이름이 있습니다. 앱 인스턴스에 사용되는 이름은 *webfrontend1*, *webfrontend2* 및 *webfrontend3*입니다.
+- **앱에 대한 명명 규칙:** 앱의 여러 인스턴스가 배포되기 때문에 배포된 앱의 인스턴스마다 이름이 필요합니다. Power Apps용 App Service Environment에서는 동일한 앱 이름을 여러 환경에 사용할 수 있습니다. App Service 환경마다 고유한 도메인 접미사가 있으므로 개발자는 각 환경에서 정확히 동일한 앱 이름을 다시 사용하도록 선택할 수 있습니다. 예를 들어 개발자가 앱 이름을 *myapp.foo1.p.azurewebsites.net*, *myapp.foo2.p.azurewebsites.net*, *myapp.foo3.p.azurewebsites.net* 등으로 지정할 수 있습니다. 여기에서 사용되는 앱의 경우 각 앱 인스턴스에 고유한 이름이 있습니다. 앱 인스턴스에 사용되는 이름은 *webfrontend1*, *webfrontend2* 및 *webfrontend3* 입니다.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![하이브리드 핵심 요소 다이어그램](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub는 Azure의 확장입니다. Azure Stack Hub는 온-프레미스 환경에 클라우드 컴퓨팅의 민첩성과 혁신을 제공하여 어디서나 하이브리드 앱을 빌드하고 배포할 수 있는 유일한 하이브리드 클라우드를 사용하도록 설정합니다.  
 > 
 > [하이브리드 앱 디자인 고려 사항](overview-app-design-considerations.md) 문서는 하이브리드 앱 디자인, 배포 및 운영에 대한 소프트웨어 품질(배치, 확장성, 가용성, 복원력, 관리 효율성 및 보안)의 핵심 요소를 검토합니다. 디자인 고려 사항은 하이브리드 앱 디자인을 최적화하고 프로덕션 환경에서 문제를 최소화하는 데 도움이 됩니다.
@@ -97,17 +97,17 @@ Azure 구독 및 Azure Stack Hub가 설치되어 있어야 합니다.
 웹앱을 Azure 및 Azure Stack Hub에 배포하고 두 클라우드의 변경 내용을 자동으로 푸시하는 하이브리드 CI/CD(연속 통합 및 지속적인 업데이트)를 설정합니다.
 
 > [!Note]  
-> 실행을 위한 적절한 이미지(Windows Server 및 SQL)가 신디케이트된 Azure Stack Hub 및 App Service를 배포해야 합니다. 자세한 내용은 [Azure Stack Hub에 App Service를 배포하기 위한 필수 조건](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md)을 참조하세요.
+> 실행을 위한 적절한 이미지(Windows Server 및 SQL)가 신디케이트된 Azure Stack Hub 및 App Service를 배포해야 합니다. 자세한 내용은 [Azure Stack Hub에 App Service를 배포하기 위한 필수 조건](/azure-stack/operator/azure-stack-app-service-before-you-get-started)을 참조하세요.
 
 #### <a name="add-code-to-azure-repos"></a>Azure Repos에 코드 추가
 
-1. Azure Repos에 프로젝트를 만드는 **권한**이 있는 계정으로 Visual Studio에 로그인합니다.
+1. Azure Repos에 프로젝트를 만드는 **권한** 이 있는 계정으로 Visual Studio에 로그인합니다.
 
     CI/CD는 앱 코드와 인프라 코드 모두에 적용할 수 있습니다. 프라이빗 클라우드와 호스트된 클라우드 개발 모두에 [Azure Resource Manager 템플릿](https://azure.microsoft.com/resources/templates/)을 사용합니다.
 
     ![Visual Studio에서 프로젝트에 연결](media/solution-deployment-guide-geo-distributed/image1.JPG)
 
-2. 기본 웹앱을 만들고 열어 **리포지토리를 복제**합니다.
+2. 기본 웹앱을 만들고 열어 **리포지토리를 복제** 합니다.
 
     ![Visual Studio에서 리포지토리 복제](media/solution-deployment-guide-geo-distributed/image2.png)
 
@@ -117,19 +117,19 @@ Azure 구독 및 Azure Stack Hub가 설치되어 있어야 합니다.
 
     ![Visual Studio에서 웹앱 프로젝트 파일 편집](media/solution-deployment-guide-geo-distributed/image3.png)
 
-2. 팀 탐색기를 사용하여 **코드를 Azure Repos에 체크 인**합니다.
+2. 팀 탐색기를 사용하여 **코드를 Azure Repos에 체크 인** 합니다.
 
-3. **애플리케이션 코드**가 Azure Repos에 체크 인되었는지 확인합니다.
+3. **애플리케이션 코드** 가 Azure Repos에 체크 인되었는지 확인합니다.
 
 ### <a name="create-the-build-definition"></a>빌드 정의 만들기
 
-1. **Azure Pipelines에 로그인**하여 빌드 정의를 만드는 기능을 확인합니다.
+1. **Azure Pipelines에 로그인** 하여 빌드 정의를 만드는 기능을 확인합니다.
 
 2. `-r win10-x64` 코드를 추가합니다. .NET Core를 사용하여 자체 포함 배포를 트리거하려면 이 코드를 추가해야 합니다.
 
     ![Azure Pipelines의 빌드 정의에 코드를 추가합니다.](media/solution-deployment-guide-geo-distributed/image4.png)
 
-3. **빌드를 실행**합니다. [자체 포함 배포 빌드](/dotnet/core/deploying/deploy-with-vs#simpleSelf) 프로세스는 Azure 및 Azure Stack Hub에서 실행 가능한 아티팩트를 게시합니다.
+3. **빌드를 실행** 합니다. [자체 포함 배포 빌드](/dotnet/core/deploying/deploy-with-vs#simpleSelf) 프로세스는 Azure 및 Azure Stack Hub에서 실행 가능한 아티팩트를 게시합니다.
 
 #### <a name="using-an-azure-hosted-agent"></a>Azure 호스트된 에이전트 사용
 
@@ -149,7 +149,7 @@ Azure DevOps Services는 개발, 준비, QA, 프로덕션 환경 등의 여러 �
 
    ![Azure DevOps Services에서 Azure App Service 배포 템플릿 적용](media/solution-deployment-guide-geo-distributed/image6.png)
 
-3. **아티팩트 추가**에서 Azure 클라우드 빌드 앱에 대한 아티팩트를 추가합니다.
+3. **아티팩트 추가** 에서 Azure 클라우드 빌드 앱에 대한 아티팩트를 추가합니다.
 
    ![Azure DevOps Services에서 Azure 클라우드 빌드에 아티팩트 추가](media/solution-deployment-guide-geo-distributed/image7.png)
 
@@ -157,25 +157,25 @@ Azure DevOps Services는 개발, 준비, QA, 프로덕션 환경 등의 여러 �
 
    ![Azure DevOps Services에서 Azure 클라우드 환경 값 설정](media/solution-deployment-guide-geo-distributed/image8.png)
 
-5. **환경 이름**을 설정하고 Azure 클라우드 엔드포인트에 대한 **Azure 구독**을 선택합니다.
+5. **환경 이름** 을 설정하고 Azure 클라우드 엔드포인트에 대한 **Azure 구독** 을 선택합니다.
 
       ![Azure DevOps Services에서 Azure 클라우드 엔드포인트에 대한 Azure 구독 선택](media/solution-deployment-guide-geo-distributed/image9.png)
 
-6. **앱 서비스 이름**에서 필요한 Azure 앱 서비스 이름을 설정합니다.
+6. **앱 서비스 이름** 에서 필요한 Azure 앱 서비스 이름을 설정합니다.
 
       ![Azure DevOps Services에서 Azure 앱 서비스 이름 설정](media/solution-deployment-guide-geo-distributed/image10.png)
 
-7. **에이전트 큐**에서 Azure 클라우드 호스팅 환경으로 "호스트된 VS2017"을 입력합니다.
+7. **에이전트 큐** 에서 Azure 클라우드 호스팅 환경으로 "호스트된 VS2017"을 입력합니다.
 
       ![Azure DevOps Services에서 Azure 클라우드 호스팅 환경의 에이전트 큐 설정](media/solution-deployment-guide-geo-distributed/image11.png)
 
-8. [Azure App Service 배포] 메뉴에서 해당 환경의 유효한 **패키지 또는 폴더**를 선택합니다. **폴더 위치**에 대해 **확인**을 선택합니다.
+8. [Azure App Service 배포] 메뉴에서 해당 환경의 유효한 **패키지 또는 폴더** 를 선택합니다. **폴더 위치** 에 대해 **확인** 을 선택합니다.
   
       ![Azure DevOps Services에서 Azure App Service 환경에 사용할 패키지 또는 폴더 선택](media/solution-deployment-guide-geo-distributed/image12.png)
 
-      ![Azure DevOps Services에서 Azure App Service 환경에 사용할 패키지 또는 폴더 선택](media/solution-deployment-guide-geo-distributed/image13.png)
+      ![폴더 선택기 대화 상자 1](media/solution-deployment-guide-geo-distributed/image13.png)
 
-9. 모든 변경 내용을 저장하고 **릴리스 파이프라인**으로 돌아갑니다.
+9. 모든 변경 내용을 저장하고 **릴리스 파이프라인** 으로 돌아갑니다.
 
     ![Azure DevOps Services에서 릴리스 파이프라인의 변경 내용 저장](media/solution-deployment-guide-geo-distributed/image14.png)
 
@@ -208,11 +208,11 @@ Azure DevOps Services는 개발, 준비, QA, 프로덕션 환경 등의 여러 �
 
     ![Azure DevOps Services에서 Azure Stack Hub 에이전트 선택](media/solution-deployment-guide-geo-distributed/image21.png)
 
-17. [Azure App Service 배포] 섹션에서 해당 환경의 유효한 **패키지 또는 폴더**를 선택합니다. 폴더 위치에 대해 **확인**을 선택합니다.
+17. [Azure App Service 배포] 섹션에서 해당 환경의 유효한 **패키지 또는 폴더** 를 선택합니다. 폴더 위치에 대해 **확인** 을 선택합니다.
 
     ![Azure DevOps Services에서 Azure App Service 배포에 사용할 폴더 선택](media/solution-deployment-guide-geo-distributed/image22.png)
 
-    ![Azure DevOps Services에서 Azure App Service 배포에 사용할 폴더 선택](media/solution-deployment-guide-geo-distributed/image23.png)
+    ![폴더 선택기 대화 상자 2](media/solution-deployment-guide-geo-distributed/image23.png)
 
 18. [변수] 탭에서 `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`라는 변수를 추가하고 해당 값을 **true**, 범위를 Azure Stack Hub로 설정합니다.
 
@@ -222,14 +222,14 @@ Azure DevOps Services는 개발, 준비, QA, 프로덕션 환경 등의 여러 �
 
     ![Azure DevOps Services에서 지속적인 배포 트리거 선택](media/solution-deployment-guide-geo-distributed/image25.png)
 
-20. Azure Stack Hub 환경에서 **배포 전** 조건 아이콘을 선택하고 트리거를 **릴리스 후**로 설정합니다.
+20. Azure Stack Hub 환경에서 **배포 전** 조건 아이콘을 선택하고 트리거를 **릴리스 후** 로 설정합니다.
 
     ![Azure DevOps Services에서 배포 전 조건 선택](media/solution-deployment-guide-geo-distributed/image26.png)
 
 21. 모든 변경 내용을 저장합니다.
 
 > [!Note]  
-> 템플릿에서 릴리스 정의를 만들 때 작업에 대한 일부 설정이 자동으로 [환경 변수](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables)로 정의되었을 수 있습니다. 이러한 설정은 작업 설정에서 수정할 수 없습니다. 이러한 설정을 편집하려면 부모 환경 항목을 선택해야 합니다.
+> 템플릿에서 릴리스 정의를 만들 때 작업에 대한 일부 설정이 자동으로 [환경 변수](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables)로 정의되었을 수 있습니다. 이러한 설정은 작업 설정에서 수정할 수 없습니다. 이러한 설정을 편집하려면 부모 환경 항목을 선택해야 합니다.
 
 ## <a name="part-2-update-web-app-options"></a>2부: 웹앱 옵션 업데이트
 
@@ -239,7 +239,7 @@ Azure DevOps Services는 개발, 준비, QA, 프로덕션 환경 등의 여러 �
 
 > [!div class="checklist"]
 > - Azure Web Apps에 기존 사용자 지정 DNS 이름 매핑
-> - **CNAME 레코드** 및 **A 레코드**를 사용하여 사용자 지정 DNS 이름을 App Service에 매핑합니다.
+> - **CNAME 레코드** 및 **A 레코드** 를 사용하여 사용자 지정 DNS 이름을 App Service에 매핑합니다.
 
 ### <a name="map-an-existing-custom-dns-name-to-azure-web-apps"></a>Azure Web Apps에 기존 사용자 지정 DNS 이름 매핑
 
@@ -278,15 +278,15 @@ Azure DevOps Services는 개발, 준비, QA, 프로덕션 환경 등의 여러 �
 
 1. 기본 공급자의 웹 사이트에 로그인합니다.
 
-2. DNS 레코드를 관리하기 위한 페이지를 찾습니다. 모든 도메인 공급자는 자체 DNS 레코드 인터페이스를 갖고 있습니다. **도메인 이름**, **DNS** 또는 **이름 서버 관리**라는 레이블이 지정된 사이트 영역을 찾습니다.
+2. DNS 레코드를 관리하기 위한 페이지를 찾습니다. 모든 도메인 공급자는 자체 DNS 레코드 인터페이스를 갖고 있습니다. **도메인 이름**, **DNS** 또는 **이름 서버 관리** 라는 레이블이 지정된 사이트 영역을 찾습니다.
 
-DNS 레코드 페이지는 **내 도메인**에서 볼 수 있습니다. **영역 파일**, **DNS 레코드** 또는 **고급 구성**이라는 링크를 찾습니다.
+DNS 레코드 페이지는 **내 도메인** 에서 볼 수 있습니다. **영역 파일**, **DNS 레코드** 또는 **고급 구성** 이라는 링크를 찾습니다.
 
 다음 스크린샷은 DNS 레코드 페이지의 예입니다.
 
 ![DNS 레코드 페이지 예](media/solution-deployment-guide-geo-distributed/image28.png)
 
-1. [도메인 이름 등록자]에서 **추가 또는 만들기**를 선택하여 레코드를 만듭니다. 일부 공급자에는 다른 레코드 형식을 추가하는 다양한 링크가 있습니다. 공급자의 설명서를 참조하세요.
+1. [도메인 이름 등록자]에서 **추가 또는 만들기** 를 선택하여 레코드를 만듭니다. 일부 공급자에는 다른 레코드 형식을 추가하는 다양한 링크가 있습니다. 공급자의 설명서를 참조하세요.
 
 2. CNAME 레코드를 추가하여 하위 도메인을 앱의 기본 호스트 이름에 매핑합니다.
 
@@ -304,13 +304,13 @@ CNAME을 추가하면 DNS 레코드 페이지가 다음 예제와 비슷합니�
 
 3. 웹앱을 선택합니다.
 
-4. Azure Portal의 앱 페이지 왼쪽 탐색 영역에서 **사용자 지정 도메인**을 선택합니다.
+4. Azure Portal의 앱 페이지 왼쪽 탐색 영역에서 **사용자 지정 도메인** 을 선택합니다.
 
 5. **호스트 이름 추가** 옆에 있는 **+** 아이콘을 선택합니다.
 
 6. 정규화된 도메인 이름(예: `www.northwindcloud.com`)을 입력합니다.
 
-7. **유효성 검사**를 선택합니다.
+7. **유효성 검사** 를 선택합니다.
 
 8. 레코드 추가 메시지가 표시되면 다른 형식의 추가 레코드(`A` 또는 `TXT`)를 도메인 이름 등록자 DNS 레코드에 추가합니다. Azure는 다음과 같은 레코드의 값과 유형을 제공합니다.
 
@@ -320,15 +320,15 @@ CNAME을 추가하면 DNS 레코드 페이지가 다음 예제와 비슷합니�
 
 9. 도메인 등록자 탭에서 이 작업을 완료하고 **호스트 이름 추가** 단추가 활성화될 때까지 유효성을 다시 검사합니다.
 
-10. **호스트 이름 레코드 형식**이 **CNAME**(www.example.com 또는 하위 도메인)으로 설정되어 있는지 확인합니다.
+10. **호스트 이름 레코드 형식** 이 **CNAME**(www.example.com 또는 하위 도메인)으로 설정되어 있는지 확인합니다.
 
-11. **호스트 이름 추가**를 선택합니다.
+11. **호스트 이름 추가** 를 선택합니다.
 
 12. 정규화된 도메인 이름(예: `northwindcloud.com`)을 입력합니다.
 
-13. **유효성 검사**를 선택합니다. **추가** 단추가 활성화됩니다.
+13. **유효성 검사** 를 선택합니다. **추가** 단추가 활성화됩니다.
 
-14. **호스트 이름 레코드 형식**이 **A 레코드(example.com)** 로 설정되어 있는지 확인합니다.
+14. **호스트 이름 레코드 형식** 이 **A 레코드(example.com)** 로 설정되어 있는지 확인합니다.
 
 15. **호스트 이름을 추가합니다**.
 
@@ -378,7 +378,7 @@ App Service에서 인증서를 사용하려면 인증서가 다음 요구 사항
 - 인증서 체인의 모든 중간 인증서를 포함함
 
 > [!Note]  
-> **ECC(타원 곡선 암호화) 인증서**는 App Service에서 작동하지만 이 가이드에서는 다루지 않습니다. ECC 인증서 만들기와 관련하여 도움이 필요하면 인증 기관에 문의하세요.
+> **ECC(타원 곡선 암호화) 인증서** 는 App Service에서 작동하지만 이 가이드에서는 다루지 않습니다. ECC 인증서 만들기와 관련하여 도움이 필요하면 인증 기관에 문의하세요.
 
 #### <a name="prepare-the-web-app"></a>웹앱 준비
 
@@ -388,7 +388,7 @@ App Service에서 인증서를 사용하려면 인증서가 다음 요구 사항
 
 1. [Azure Portal](https://portal.azure.com/)을 열고 웹앱으로 이동합니다.
 
-2. 왼쪽 메뉴에서 **App Services**를 선택한 다음, 웹앱 이름을 선택합니다.
+2. 왼쪽 메뉴에서 **App Services** 를 선택한 다음, 웹앱 이름을 선택합니다.
 
 ![Azure Portal에서 웹앱 선택](media/solution-deployment-guide-geo-distributed/image33.png)
 
@@ -408,7 +408,7 @@ App Service에서 인증서를 사용하려면 인증서가 다음 요구 사항
 
 1. **기본**, **표준** 또는 **프리미엄** 계층 중 하나를 선택합니다.
 
-2. **선택**을 선택합니다.
+2. **선택** 을 선택합니다.
 
 ![웹앱의 가격 책정 계층 선택](media/solution-deployment-guide-geo-distributed/image36.png)
 
@@ -422,7 +422,7 @@ App Service에서 인증서를 사용하려면 인증서가 다음 요구 사항
 
 1. 받은 **각 인증서를 텍스트 편집기에서 엽니다**.
 
-2. 병합된 인증서에 대한 *mergedcertificate.crt*라는 파일을 만듭니다. 텍스트 편집기에서 각 인증서의 내용을 이 파일에 복사합니다. 사용자 인증서의 순서는 사용자의 인증서로 시작하고 루트 인증서로 끝나는 인증서 체인의 순서에 따라야 합니다. 다음 예제와 유사합니다.
+2. 병합된 인증서에 대한 *mergedcertificate.crt* 라는 파일을 만듭니다. 텍스트 편집기에서 각 인증서의 내용을 이 파일에 복사합니다. 사용자 인증서의 순서는 사용자의 인증서로 시작하고 루트 인증서로 끝나는 인증서 체인의 순서에 따라야 합니다. 다음 예제와 유사합니다.
 
     ```Text
 
@@ -467,15 +467,15 @@ IIS 또는 **Certreq.exe** 파일은 인증서 요청을 생성하고 로컬 머
 
 #### <a name="upload-the-ssl-certificate"></a>SSL 인증서 업로드
 
-1. 웹앱의 왼쪽 탐색 메뉴에서 **SSL 설정**을 선택합니다.
+1. 웹앱의 왼쪽 탐색 메뉴에서 **SSL 설정** 을 선택합니다.
 
-2. **인증서 업로드**를 선택합니다.
+2. **인증서 업로드** 를 선택합니다.
 
-3. **PFX 인증서 파일**에서 PFX 파일을 선택합니다.
+3. **PFX 인증서 파일** 에서 PFX 파일을 선택합니다.
 
-4. **인증서 암호**에서 PFX 파일을 내보낼 때 만든 암호를 입력합니다.
+4. **인증서 암호** 에서 PFX 파일을 내보낼 때 만든 암호를 입력합니다.
 
-5. **업로드**를 선택합니다.
+5. **업로드** 를 선택합니다.
 
     ![SSL 인증서 업로드](media/solution-deployment-guide-geo-distributed/image38.png)
 
@@ -485,20 +485,20 @@ App Service에서 인증서 업로드가 완료되면 **SSL 설정** 페이지�
 
 #### <a name="bind-your-ssl-certificate"></a>SSL 인증서 바인딩
 
-1. **SSL 바인딩** 섹션에서 **바인딩 추가**를 선택합니다.
+1. **SSL 바인딩** 섹션에서 **바인딩 추가** 를 선택합니다.
 
     > [!Note]  
     >  인증서를 업로드했지만 **호스트 이름** 드롭다운의 도메인 이름에 표시되지 않으면 브라우저 페이지를 새로 고칩니다.
 
 2. **SSL 바인딩 추가** 페이지에서 드롭다운을 사용하여 보호할 도메인 이름과 사용할 인증서를 선택합니다.
 
-3. **SSL 유형**에서 [**SNI(서버 이름 표시)** ](https://en.wikipedia.org/wiki/Server_Name_Indication) 또는 IP 기반 SSL을 사용할지 선택합니다.
+3. **SSL 유형** 에서 [**SNI(서버 이름 표시)**](https://en.wikipedia.org/wiki/Server_Name_Indication) 또는 IP 기반 SSL을 사용할지 선택합니다.
 
     - **SNI 기반 SSL**: 여러 개의 SNI 기반 SSL 바인딩을 추가할 수 있습니다. 이 옵션을 사용하면 여러 SSL 인증서로 같은 IP 주소의 여러 도메인을 보호할 수 있습니다. 대부분의 최신 브라우저(Internet Explorer, Chrome, Firefox 및 Opera 포함)는 SNI를 지원합니다. [Server Name Indication](https://wikipedia.org/wiki/Server_Name_Indication)(서버 이름 표시)에서 더 포괄적인 브라우저 지원 정보를 찾을 수 있습니다.
 
     - **IP 기반 SSL**: IP 기반 SSL 바인딩은 하나만 추가할 수 있습니다. 이 옵션을 사용하면 전용 공용 IP 주소를 보호하는 데 하나의 SSL 인증서만 사용할 수 있습니다. 여러 도메인을 보호하려면 동일한 SSL 인증서를 사용하여 모두 보호합니다. IP 기반 SSL은 전통적인 SSL 바인딩 옵션입니다.
 
-4. **바인딩 추가**를 선택합니다.
+4. **바인딩 추가** 를 선택합니다.
 
     ![SSL 바인딩 추가](media/solution-deployment-guide-geo-distributed/image40.png)
 
@@ -529,7 +529,7 @@ A 레코드가 웹앱에 매핑되면 도메인 레지스트리를 전용 IP 주
 
 기본적으로 누구나 HTTP를 사용하여 웹앱에 액세스할 수 있습니다. HTTPS 포트에 대한 모든 HTTP 요청을 리디렉션할 수 있습니다.
 
-웹앱 페이지에서 **SL 설정**을 선택합니다. 그런 다음 **HTTPS에만 해당**에서 **켜기**를 선택합니다.
+웹앱 페이지에서 **SL 설정** 을 선택합니다. 그런 다음 **HTTPS에만 해당** 에서 **켜기** 를 선택합니다.
 
 ![HTTPS 적용](media/solution-deployment-guide-geo-distributed/image43.png)
 
@@ -543,29 +543,29 @@ A 레코드가 웹앱에 매핑되면 도메인 레지스트리를 전용 IP 주
 
 [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) 1.0은 기본적으로 앱에서 허용되며, 더 이상 [PCI DSS](https://wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard) 같은 산업 표준에서 안전한 것으로 간주되지 않습니다. 더 높은 TLS 버전을 적용하려면 다음이 단계를 수행합니다.
 
-1. 웹앱 페이지의 왼쪽 탐색 영역에서 **SSL 설정**을 선택합니다.
+1. 웹앱 페이지의 왼쪽 탐색 영역에서 **SSL 설정** 을 선택합니다.
 
-2. **TLS 버전**에서 원하는 최소 TLS 버전을 선택합니다.
+2. **TLS 버전** 에서 원하는 최소 TLS 버전을 선택합니다.
 
     ![TLS 1.1 또는 1.2 적용](media/solution-deployment-guide-geo-distributed/image44.png)
 
 ### <a name="create-a-traffic-manager-profile"></a>Traffic Manager 프로필 만들기
 
-1. **리소스 만들기** > **네트워킹** > **Traffic Manager 프로필** > **만들기**를 선택합니다.
+1. **리소스 만들기** > **네트워킹** > **Traffic Manager 프로필** > **만들기** 를 선택합니다.
 
-2. **Traffic Manager 프로필 만들기**에 다음과 같이 입력합니다.
+2. **Traffic Manager 프로필 만들기** 에 다음과 같이 입력합니다.
 
-    1. **이름**에 프로필 이름을 입력합니다. 이 이름은 trafficmanager.net 영역 내에서 고유해야 하며, Traffic Manager 프로필에 액세스하는 데 사용되는 DNS 이름인 trafficmanager.net이 됩니다.
+    1. **이름** 에 프로필 이름을 입력합니다. 이 이름은 trafficmanager.net 영역 내에서 고유해야 하며, Traffic Manager 프로필에 액세스하는 데 사용되는 DNS 이름인 trafficmanager.net이 됩니다.
 
-    2. **라우팅 방법**에서 **지리적 라우팅 방법**을 선택합니다.
+    2. **라우팅 방법** 에서 **지리적 라우팅 방법** 을 선택합니다.
 
-    3. **구독**에서 이 프로필을 만들 구독을 선택합니다.
+    3. **구독** 에서 이 프로필을 만들 구독을 선택합니다.
 
-    4. **리소스 그룹**에서 이 프로필을 배치할 새 리소스 그룹을 만듭니다.
+    4. **리소스 그룹** 에서 이 프로필을 배치할 새 리소스 그룹을 만듭니다.
 
-    5. **리소스 그룹 위치**에서 리소스 그룹의 위치를 선택합니다. 이 설정은 리소스 그룹의 위치를 나타내며 전역적으로 배포되는 Traffic Manager 프로필에는 영향을 미치지 않습니다.
+    5. **리소스 그룹 위치** 에서 리소스 그룹의 위치를 선택합니다. 이 설정은 리소스 그룹의 위치를 나타내며 전역적으로 배포되는 Traffic Manager 프로필에는 영향을 미치지 않습니다.
 
-    6. **만들기**를 선택합니다.
+    6. **만들기** 를 선택합니다.
 
     7. Traffic Manager 프로필의 글로벌 배포가 완료되면 각 리소스 그룹의 리소스 중 하나로 나열됩니다.
 
@@ -575,48 +575,48 @@ A 레코드가 웹앱에 매핑되면 도메인 레지스트리를 전용 IP 주
 
 1. 포털의 검색 창에서 이전 섹션에서 만든 **Traffic Manager 프로필** 이름을 검색하고, 표시되는 결과에서 해당 Traffic Manager 프로필을 선택합니다.
 
-2. **Traffic Manager 프로필**의 **설정** 섹션에서 **엔드포인트**를 선택합니다.
+2. **Traffic Manager 프로필** 의 **설정** 섹션에서 **엔드포인트** 를 선택합니다.
 
-3. **추가**를 선택합니다.
+3. **추가** 를 선택합니다.
 
 4. Azure Stack Hub 엔드포인트를 추가합니다.
 
-5. **형식**의 경우 **외부 엔드포인트**를 선택합니다.
+5. **형식** 의 경우 **외부 엔드포인트** 를 선택합니다.
 
-6. 이 엔드포인트의 **이름**를 입력합니다. Azure Stack Hub의 이름을 사용하는 것이 가장 좋습니다.
+6. 이 엔드포인트의 **이름** 를 입력합니다. Azure Stack Hub의 이름을 사용하는 것이 가장 좋습니다.
 
 7. **FQDN**(정규화된 도메인 이름)에는 Azure Stack Hub 웹앱의 외부 URL을 사용합니다.
 
-8. 지리적 매핑에서 리소스가 있는 지역/대륙을 선택합니다. 예를 들어 **유럽**을 선택합니다.
+8. 지리적 매핑에서 리소스가 있는 지역/대륙을 선택합니다. 예를 들어 **유럽** 을 선택합니다.
 
-9. 표시되는 국가/지역 드롭다운에서 이 엔드포인트에 적용되는 국가를 선택합니다. 예를 들어 **독일**을 선택합니다.
+9. 표시되는 국가/지역 드롭다운에서 이 엔드포인트에 적용되는 국가를 선택합니다. 예를 들어 **독일** 을 선택합니다.
 
-10. **사용 안 함으로 추가**를 선택 취소 상태로 유지합니다.
+10. **사용 안 함으로 추가** 를 선택 취소 상태로 유지합니다.
 
-11. **확인**을 선택합니다.
+11. **확인** 을 선택합니다.
 
 12. Azure 엔드포인트를 추가합니다.
 
-    1. **형식**에는 **Azure 엔드포인트**를 선택합니다.
+    1. **형식** 에는 **Azure 엔드포인트** 를 선택합니다.
 
-    2. 엔드포인트에 사용할 **이름**을 입력합니다.
+    2. 엔드포인트에 사용할 **이름** 을 입력합니다.
 
-    3. **대상 리소스 종류**에는 **App Service**를 선택합니다.
+    3. **대상 리소스 종류** 에는 **App Service** 를 선택합니다.
 
-    4. **대상 리소스**의 경우 **앱 서비스 선택**을 선택하여 동일한 구독에 속한 웹앱 목록을 표시합니다. **리소스**에서 첫 번째 엔드포인트로 사용할 앱 서비스를 선택합니다.
+    4. **대상 리소스** 의 경우 **앱 서비스 선택** 을 선택하여 동일한 구독에 속한 웹앱 목록을 표시합니다. **리소스** 에서 첫 번째 엔드포인트로 사용할 앱 서비스를 선택합니다.
 
-13. 지리적 매핑에서 리소스가 있는 지역/대륙을 선택합니다. 예를 들어 **북아메리카/중앙 아메리카/카리브 해**를 선택합니다.
+13. 지리적 매핑에서 리소스가 있는 지역/대륙을 선택합니다. 예를 들어 **북아메리카/중앙 아메리카/카리브 해** 를 선택합니다.
 
 14. 표시되는 국가/지역 드롭다운에서 이 상자를 비워 두어 위의 모든 지역 그룹화를 선택합니다.
 
-15. **사용 안 함으로 추가**를 선택 취소 상태로 유지합니다.
+15. **사용 안 함으로 추가** 를 선택 취소 상태로 유지합니다.
 
-16. **확인**을 선택합니다.
+16. **확인** 을 선택합니다.
 
     > [!Note]  
     >  리소스의 기본 엔드포인트로 사용할, 지리적 범위가 모두(세계)인 엔드포인트를 하나 이상 만듭니다.
 
-17. 두 엔드포인트가 추가되면 두 엔드포인트가 **Traffic Manager 프로필**에 표시되고 모니터링 상태는 **온라인**으로 나타납니다.
+17. 두 엔드포인트가 추가되면 두 엔드포인트가 **Traffic Manager 프로필** 에 표시되고 모니터링 상태는 **온라인** 으로 나타납니다.
 
     ![Traffic Manager 프로필 엔드포인트 상태](media/solution-deployment-guide-geo-distributed/image46.png)
 

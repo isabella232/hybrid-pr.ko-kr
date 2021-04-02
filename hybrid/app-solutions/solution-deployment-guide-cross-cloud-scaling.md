@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: ed2ad5bed8f4bd80d4a40ab7600842d5544ff97d
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886818"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895417"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Azure 및 Azure Stack Hub를 사용하여 클라우드 간에 스케일링되는 앱 배포
 
@@ -30,25 +30,25 @@ ms.locfileid: "88886818"
 > - 배포를 모니터링하고 추적하는 방법을 알아봅니다.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![하이브리드 핵심 요소 다이어그램](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub는 Azure의 확장입니다. Azure Stack Hub는 온-프레미스 환경에 클라우드 컴퓨팅의 민첩성과 혁신을 제공하여 어디서나 하이브리드 앱을 빌드하고 배포할 수 있는 유일한 하이브리드 클라우드를 사용하도록 설정합니다.  
 > 
 > [하이브리드 앱 디자인 고려 사항](overview-app-design-considerations.md) 문서는 하이브리드 앱 디자인, 배포 및 운영에 대한 소프트웨어 품질(배치, 확장성, 가용성, 복원력, 관리 효율성 및 보안)의 핵심 요소를 검토합니다. 디자인 고려 사항은 하이브리드 앱 디자인을 최적화하고 프로덕션 환경에서 문제를 최소화하는 데 도움이 됩니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 - 동작합니다. 필요한 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 - Azure Stack Hub 통합 시스템 또는 ASDK(Azure Stack Development Kit) 배포
-  - Azure Stack Hub를 설치하는 방법에 대한 지침은 [ASDK 설치](/azure-stack/asdk/asdk-install.md)를 참조하세요.
+  - Azure Stack Hub를 설치하는 방법에 대한 지침은 [ASDK 설치](/azure-stack/asdk/asdk-install)를 참조하세요.
   - ASDK 배포 후 자동화 스크립트는 [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)에서 찾을 수 있습니다.
   - 이 설치를 완료하는 데 몇 시간 정도 걸릴 수 있습니다.
-- [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) PaaS 서비스를 Azure Stack Hub에 배포합니다.
-- Azure Stack Hub 환경 내에서 [계획/제안을 만듭니다](/azure-stack/operator/service-plan-offer-subscription-overview.md).
-- Azure Stack Hub 환경 내에서 [테넌트 구독을 만듭니다](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md).
+- [App Service](/azure-stack/operator/azure-stack-app-service-deploy) PaaS 서비스를 Azure Stack Hub에 배포합니다.
+- Azure Stack Hub 환경 내에서 [계획/제안을 만듭니다](/azure-stack/operator/service-plan-offer-subscription-overview).
+- Azure Stack Hub 환경 내에서 [테넌트 구독을 만듭니다](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm).
 - 테넌트 구독 내에서 웹앱을 만듭니다. 나중에 사용할 수 있도록 새 웹앱 URL을 기록해 둡니다.
 - 테넌트 구독 내에서 Azure Pipelines VM(가상 머신)을 배포합니다.
 - .NET 3.5가 설치된 Windows Server 2016 VM이 필요합니다. 이 VM은 Azure Stack Hub의 테넌트 구독에서 프라이빗 빌드 에이전트로 빌드됩니다.
-- [SQL 2017 VM 이미지가 있는 Windows Server 2016](/azure-stack/operator/azure-stack-add-vm-image.md)은 Azure Stack Hub Marketplace에서 사용할 수 있습니다. 이 이미지를 사용할 수 없는 경우 Azure Stack Hub 운영자에게 문의하여 환경에 추가해 달라고 요청합니다.
+- [SQL 2017 VM 이미지가 있는 Windows Server 2016](/azure-stack/operator/azure-stack-add-vm-image)은 Azure Stack Hub Marketplace에서 사용할 수 있습니다. 이 이미지를 사용할 수 없는 경우 Azure Stack Hub 운영자에게 문의하여 환경에 추가해 달라고 요청합니다.
 
 ## <a name="issues-and-considerations"></a>문제 및 고려 사항
 
@@ -79,7 +79,7 @@ ms.locfileid: "88886818"
 웹앱을 Azure 및 Azure Stack Hub에 배포하고 두 클라우드의 변경 내용을 자동으로 푸시하는 하이브리드 CI/CD(연속 통합 및 지속적인 배포)를 설정합니다.
 
 > [!Note]  
-> 실행을 위한 적절한 이미지(Windows Server 및 SQL)가 신디케이트된 Azure Stack Hub 및 App Service를 배포해야 합니다. 자세한 내용은 App Service 설명서 [Azure Stack Hub에 App Service를 배포하기 위한 필수 조건](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md)을 검토하세요.
+> 실행을 위한 적절한 이미지(Windows Server 및 SQL)가 신디케이트된 Azure Stack Hub 및 App Service를 배포해야 합니다. 자세한 내용은 App Service 설명서 [Azure Stack Hub에 App Service를 배포하기 위한 필수 조건](/azure-stack/operator/azure-stack-app-service-before-you-get-started)을 검토하세요.
 
 ### <a name="add-code-to-azure-repos"></a>Azure Repos에 코드 추가
 
@@ -91,7 +91,7 @@ Azure Repos
 
     ![Azure Repos에서 프로젝트에 연결](media/solution-deployment-guide-cross-cloud-scaling/image1.JPG)
 
-2. 기본 웹앱을 만들고 열어 **리포지토리를 복제**합니다.
+2. 기본 웹앱을 만들고 열어 **리포지토리를 복제** 합니다.
 
     ![Azure 웹앱에서 리포지토리 복제](media/solution-deployment-guide-cross-cloud-scaling/image2.png)
 
@@ -133,7 +133,7 @@ Azure Pipelines 및 Azure DevOps Services는 개발, 준비, QA, 프로덕션 �
 
    ![Azure App Service 배포 템플릿 적용](meDia/solution-deployment-guide-cross-cloud-scaling/image6.png)
 
-3. **아티팩트 추가**에서 Azure 클라우드 빌드 앱에 대한 아티팩트를 추가합니다.
+3. **아티팩트 추가** 에서 Azure 클라우드 빌드 앱에 대한 아티팩트를 추가합니다.
 
    ![Azure 클라우드 빌드에 아티팩트 추가](media/solution-deployment-guide-cross-cloud-scaling/image7.png)
 
@@ -141,25 +141,25 @@ Azure Pipelines 및 Azure DevOps Services는 개발, 준비, QA, 프로덕션 �
 
    ![Azure 클라우드 환경 값 설정](media/solution-deployment-guide-cross-cloud-scaling/image8.png)
 
-5. **환경 이름**을 설정하고 Azure 클라우드 엔드포인트에 대한 **Azure 구독**을 선택합니다.
+5. **환경 이름** 을 설정하고 Azure 클라우드 엔드포인트에 대한 **Azure 구독** 을 선택합니다.
 
       ![Azure 클라우드 엔드포인트에 대한 Azure 구독 선택](media/solution-deployment-guide-cross-cloud-scaling/image9.png)
 
-6. **앱 서비스 이름**에서 필요한 Azure 앱 서비스 이름을 설정합니다.
+6. **앱 서비스 이름** 에서 필요한 Azure 앱 서비스 이름을 설정합니다.
 
       ![Azure 앱 서비스 이름 설정](media/solution-deployment-guide-cross-cloud-scaling/image10.png)
 
-7. **에이전트 큐**에서 Azure 클라우드 호스팅 환경으로 "호스트된 VS2017"을 입력합니다.
+7. **에이전트 큐** 에서 Azure 클라우드 호스팅 환경으로 "호스트된 VS2017"을 입력합니다.
 
       ![Azure 클라우드 호스팅 환경의 에이전트 큐 설정](media/solution-deployment-guide-cross-cloud-scaling/image11.png)
 
-8. [Azure App Service 배포] 메뉴에서 해당 환경의 유효한 **패키지 또는 폴더**를 선택합니다. **폴더 위치**에 대해 **확인**을 선택합니다.
+8. [Azure App Service 배포] 메뉴에서 해당 환경의 유효한 **패키지 또는 폴더** 를 선택합니다. **폴더 위치** 에 대해 **확인** 을 선택합니다.
   
       ![Azure App Service 환경에 사용할 패키지 또는 폴더 선택](media/solution-deployment-guide-cross-cloud-scaling/image12.png)
 
-      ![Azure App Service 환경에 사용할 패키지 또는 폴더 선택](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
+      ![폴더 선택기 대화 상자 1](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
 
-9. 모든 변경 내용을 저장하고 **릴리스 파이프라인**으로 돌아갑니다.
+9. 모든 변경 내용을 저장하고 **릴리스 파이프라인** 으로 돌아갑니다.
 
     ![릴리스 파이프라인의 변경 내용 저장](media/solution-deployment-guide-cross-cloud-scaling/image14.png)
 
@@ -190,11 +190,11 @@ Azure Pipelines 및 Azure DevOps Services는 개발, 준비, QA, 프로덕션 �
 
     ![Azure Stack 에이전트 선택](media/solution-deployment-guide-cross-cloud-scaling/image21.png)
 
-17. [Azure App Service 배포] 섹션에서 해당 환경의 유효한 **패키지 또는 폴더**를 선택합니다. 폴더 위치에 대해 **확인**을 선택합니다.
+17. [Azure App Service 배포] 섹션에서 해당 환경의 유효한 **패키지 또는 폴더** 를 선택합니다. 폴더 위치에 대해 **확인** 을 선택합니다.
 
     ![Azure App Service 배포에 사용할 폴더 선택](media/solution-deployment-guide-cross-cloud-scaling/image22.png)
 
-    ![Azure App Service 배포에 사용할 폴더 선택](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
+    ![폴더 선택기 대화 상자 2](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
 
 18. [변수] 탭에서 `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`라는 변수를 추가하고 해당 값을 **true**, 범위를 Azure Stack으로 설정합니다.
 
@@ -204,14 +204,14 @@ Azure Pipelines 및 Azure DevOps Services는 개발, 준비, QA, 프로덕션 �
 
     ![지속적인 배포 트리거 선택](media/solution-deployment-guide-cross-cloud-scaling/image25.png)
 
-20. Azure Stack 환경에서 **배포 전** 조건 아이콘을 선택하고 트리거를 **릴리스 후**로 설정합니다.
+20. Azure Stack 환경에서 **배포 전** 조건 아이콘을 선택하고 트리거를 **릴리스 후** 로 설정합니다.
 
     ![배포 전 조건 선택](media/solution-deployment-guide-cross-cloud-scaling/image26.png)
 
 21. 모든 변경 내용을 저장합니다.
 
 > [!Note]  
-> 템플릿에서 릴리스 정의를 만들 때 작업에 대한 일부 설정이 자동으로 [환경 변수](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables)로 정의되었을 수 있습니다. 이러한 설정은 작업 설정에서 수정할 수 없습니다. 이러한 설정을 편집하려면 부모 환경 항목을 선택해야 합니다.
+> 템플릿에서 릴리스 정의를 만들 때 작업에 대한 일부 설정이 자동으로 [환경 변수](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables)로 정의되었을 수 있습니다. 이러한 설정은 작업 설정에서 수정할 수 없습니다. 이러한 설정을 편집하려면 부모 환경 항목을 선택해야 합니다.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Visual Studio를 통해 Azure Stack Hub에 게시
 
@@ -219,30 +219,30 @@ Azure DevOps Services 빌드는 엔드포인트를 만들어서 Azure Stack Hub�
 
 1. Azure DevOps Services에 로그인하고 앱 설정 페이지로 이동합니다.
 
-2. **설정**에서 **보안**을 선택합니다.
+2. **설정** 에서 **보안** 을 선택합니다.
 
-3. **VSTS 그룹**에서 **엔드포인트 작성자**를 선택합니다.
+3. **VSTS 그룹** 에서 **엔드포인트 작성자** 를 선택합니다.
 
-4. **구성원** 탭에서 **추가**를 선택합니다.
+4. **구성원** 탭에서 **추가** 를 선택합니다.
 
-5. **사용자 및 그룹 추가**에서 사용자 이름을 입력하고 사용자 목록에서 해당 사용자를 선택합니다.
+5. **사용자 및 그룹 추가** 에서 사용자 이름을 입력하고 사용자 목록에서 해당 사용자를 선택합니다.
 
-6. **변경 내용 저장**을 선택합니다.
+6. **변경 내용 저장** 을 선택합니다.
 
-7. **VSTS 그룹** 목록에서 **엔드포인트 관리자**를 선택합니다.
+7. **VSTS 그룹** 목록에서 **엔드포인트 관리자** 를 선택합니다.
 
-8. **구성원** 탭에서 **추가**를 선택합니다.
+8. **구성원** 탭에서 **추가** 를 선택합니다.
 
-9. **사용자 및 그룹 추가**에서 사용자 이름을 입력하고 사용자 목록에서 해당 사용자를 선택합니다.
+9. **사용자 및 그룹 추가** 에서 사용자 이름을 입력하고 사용자 목록에서 해당 사용자를 선택합니다.
 
-10. **변경 내용 저장**을 선택합니다.
+10. **변경 내용 저장** 을 선택합니다.
 
 이제 엔드포인트 정보가 있으므로 Azure Pipelines에서 Azure Stack Hub에 연결할 수 있습니다. Azure Stack Hub의 빌드 에이전트는 Azure Pipelines에서 명령을 가져온 다음, Azure Stack Hub와 통신할 수 있도록 엔드포인트 정보를 전달합니다.
 
 ## <a name="develop-the-app-build"></a>앱 빌드 개발
 
 > [!Note]  
-> 실행을 위한 적절한 이미지(Windows Server 및 SQL)가 신디케이트된 Azure Stack Hub 및 App Service를 배포해야 합니다. 자세한 내용은 [Azure Stack Hub에 App Service를 배포하기 위한 필수 조건](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md)을 참조하세요.
+> 실행을 위한 적절한 이미지(Windows Server 및 SQL)가 신디케이트된 Azure Stack Hub 및 App Service를 배포해야 합니다. 자세한 내용은 [Azure Stack Hub에 App Service를 배포하기 위한 필수 조건](/azure-stack/operator/azure-stack-app-service-before-you-get-started)을 참조하세요.
 
 Azure Repos의 웹앱 코드와 같은 [Azure Resource Manager 템플릿](https://azure.microsoft.com/resources/templates/)을 사용하여 두 클라우드를 배포합니다.
 
@@ -250,7 +250,7 @@ Azure Repos의 웹앱 코드와 같은 [Azure Resource Manager 템플릿](https:
 
 1. Azure Stack Hub에 프로젝트를 만드는 권한이 있는 계정으로 Azure Repos에 로그인합니다.
 
-2. 기본 웹앱을 만들고 열어 **리포지토리를 복제**합니다.
+2. 기본 웹앱을 만들고 열어 **리포지토리를 복제** 합니다.
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>두 클라우드의 App Services에 대한 자체 포함 웹앱 배포 만들기
 
@@ -266,7 +266,7 @@ Azure Repos의 웹앱 코드와 같은 [Azure Resource Manager 템플릿](https:
 
 2. 프로젝트에 대한 **웹 애플리케이션 빌드** 페이지로 이동합니다.
 
-3. **인수**에서 **-r win10-x64** 코드를 추가합니다. .NET Core를 사용하여 자체 포함 배포를 트리거하려면 이 코드를 추가해야 합니다.
+3. **인수** 에서 **-r win10-x64** 코드를 추가합니다. .NET Core를 사용하여 자체 포함 배포를 트리거하려면 이 코드를 추가해야 합니다.
 
 4. 빌드를 실행합니다. [자체 포함 배포 빌드](/dotnet/core/deploying/deploy-with-vs#simpleSelf) 프로세스는 Azure 및 Azure Stack Hub에서 실행 가능한 아티팩트를 게시합니다.
 
@@ -282,78 +282,78 @@ Azure Pipelines 및 Azure DevOps Services는 개발, 준비, QA, 프로덕션 �
 
 앱 빌드 프로세스의 마지막 단계는 릴리스 정의 만들기입니다. 이 릴리스 정의는 릴리스를 만들고 빌드를 배포하는 데 사용됩니다.
 
-1. Azure Pipelines에 로그인하고 프로젝트에 대한 **빌드 및 릴리스**로 이동합니다.
+1. Azure Pipelines에 로그인하고 프로젝트에 대한 **빌드 및 릴리스** 로 이동합니다.
 
-2. **릴리스** 탭에서 **[+]** 기호를 선택한 다음, **릴리스 정의 만들기**를 선택합니다.
+2. **릴리스** 탭에서 **[+]** 기호를 선택한 다음, **릴리스 정의 만들기** 를 선택합니다.
 
-3. **템플릿 선택**에서 **Azure App Service 배포**를 선택한 다음, **적용**을 선택합니다.
+3. **템플릿 선택** 에서 **Azure App Service 배포** 를 선택한 다음, **적용** 을 선택합니다.
 
-4. **아티팩트 추가**의 **원본(빌드 정의)** 에서 Azure 클라우드 빌드 앱을 선택합니다.
+4. **아티팩트 추가** 의 **원본(빌드 정의)** 에서 Azure 클라우드 빌드 앱을 선택합니다.
 
 5. **파이프라인** 탭에서 **단계 1**, **작업 1** 링크를 선택하여 **환경 작업을 살펴봅니다**.
 
-6. **작업** 탭에서 **환경 이름**으로 Azure를 입력하고, **Azure 구독** 목록에서 AzureCloud Traders-Web EP를 선택합니다.
+6. **작업** 탭에서 **환경 이름** 으로 Azure를 입력하고, **Azure 구독** 목록에서 AzureCloud Traders-Web EP를 선택합니다.
 
-7. **Azure 앱 서비스 이름**을 입력합니다. 다음 화면 캡처에서는 `northwindtraders`입니다.
+7. **Azure 앱 서비스 이름** 을 입력합니다. 다음 화면 캡처에서는 `northwindtraders`입니다.
 
-8. 에이전트 단계의 경우 **에이전트 큐** 목록에서 **호스트된 VS2017**을 선택합니다.
+8. 에이전트 단계의 경우 **에이전트 큐** 목록에서 **호스트된 VS2017** 을 선택합니다.
 
-9. **Azure App Service 배포**에서 해당 환경의 유효한 **패키지 또는 폴더**를 선택합니다.
+9. **Azure App Service 배포** 에서 해당 환경의 유효한 **패키지 또는 폴더** 를 선택합니다.
 
-10. **파일 또는 폴더**에서 **위치**에 대해 **확인**을 선택합니다.
+10. **파일 또는 폴더** 에서 **위치** 에 대해 **확인** 을 선택합니다.
 
-11. 모든 변경 내용을 저장하고 **파이프라인**으로 돌아갑니다.
+11. 모든 변경 내용을 저장하고 **파이프라인** 으로 돌아갑니다.
 
-12. **파이프라인** 탭에서 **아티팩트 추가**를 선택하고, **원본(빌드 정의)** 목록에서 **NorthwindCloud Traders-Vessel**을 선택합니다.
+12. **파이프라인** 탭에서 **아티팩트 추가** 를 선택하고, **원본(빌드 정의)** 목록에서 **NorthwindCloud Traders-Vessel** 을 선택합니다.
 
-13. **템플릿 선택**에서 또 다른 환경을 추가합니다. **Azure App Service 배포**를 선택한 다음, **적용**을 선택합니다.
+13. **템플릿 선택** 에서 또 다른 환경을 추가합니다. **Azure App Service 배포** 를 선택한 다음, **적용** 을 선택합니다.
 
-14. **환경 이름**으로 `Azure Stack Hub`를 입력합니다.
+14. **환경 이름** 으로 `Azure Stack Hub`를 입력합니다.
 
 15. **작업** 탭에서 Azure Stack Hub를 찾아 선택합니다.
 
-16. **Azure 구독** 목록에서 Azure Stack Hub 엔드포인트로 **AzureStack Traders-Vessel EP**를 선택합니다.
+16. **Azure 구독** 목록에서 Azure Stack Hub 엔드포인트로 **AzureStack Traders-Vessel EP** 를 선택합니다.
 
-17. **앱 서비스 이름**으로 Azure Stack Hub 웹앱 이름을 입력합니다.
+17. **앱 서비스 이름** 으로 Azure Stack Hub 웹앱 이름을 입력합니다.
 
-18. **에이전트 선택**의 **에이전트 큐** 목록에서 **AzureStack -b Douglas Fir**을 선택합니다.
+18. **에이전트 선택** 의 **에이전트 큐** 목록에서 **AzureStack -b Douglas Fir** 을 선택합니다.
 
-19. **Azure App Service 배포**에서 해당 환경의 유효한 **패키지 또는 폴더**를 선택합니다. **파일 또는 폴더 선택**에서 폴더 **위치**에 대해 **확인**을 선택합니다.
+19. **Azure App Service 배포** 에서 해당 환경의 유효한 **패키지 또는 폴더** 를 선택합니다. **파일 또는 폴더 선택** 에서 폴더 **위치** 에 대해 **확인** 을 선택합니다.
 
-20. **변수** 탭에서 `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`라는 변수를 찾습니다. 변수 값을 **true**로 설정하고, 범위를 **Azure Stack Hub**로 설정합니다.
+20. **변수** 탭에서 `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`라는 변수를 찾습니다. 변수 값을 **true** 로 설정하고, 범위를 **Azure Stack Hub** 로 설정합니다.
 
-21. **파이프라인** 탭에서 NorthwindCloud Traders-Web 아티팩트에 대한 **지속적인 배포 트리거** 아이콘을 선택하고, **지속적인 배포 트리거**를 **사용**으로 설정합니다. **NorthwindCloud Traders-Vessel** 아티팩트에 대해 동일한 작업을 수행합니다.
+21. **파이프라인** 탭에서 NorthwindCloud Traders-Web 아티팩트에 대한 **지속적인 배포 트리거** 아이콘을 선택하고, **지속적인 배포 트리거** 를 **사용** 으로 설정합니다. **NorthwindCloud Traders-Vessel** 아티팩트에 대해 동일한 작업을 수행합니다.
 
-22. Azure Stack Hub 환경에서 **배포 전 조건** 아이콘을 선택하고, 트리거를 **릴리스 후**로 설정합니다.
+22. Azure Stack Hub 환경에서 **배포 전 조건** 아이콘을 선택하고, 트리거를 **릴리스 후** 로 설정합니다.
 
 23. 모든 변경 내용을 저장합니다.
 
 > [!Note]  
-> 템플릿에서 릴리스 정의를 만들 때 작업에 대한 일부 설정이 자동으로 [환경 변수](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables)로 정의됩니다. 이러한 설정은 작업 설정에서 수정할 수 없고, 부모 환경 항목에서 수정할 수 있습니다.
+> 템플릿에서 릴리스 정의를 만들 때 작업에 대한 일부 설정이 자동으로 [환경 변수](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables)로 정의됩니다. 이러한 설정은 작업 설정에서 수정할 수 없고, 부모 환경 항목에서 수정할 수 있습니다.
 
 ## <a name="create-a-release"></a>릴리스 만들기
 
-1. **파이프라인** 탭에서 **릴리스** 목록을 열고 **릴리스 만들기**를 선택합니다.
+1. **파이프라인** 탭에서 **릴리스** 목록을 열고 **릴리스 만들기** 를 선택합니다.
 
-2. 릴리스에 대한 설명을 입력하고 올바른 아티팩트가 선택되었는지 확인한 다음, **만들기**를 선택합니다. 잠시 후 새 릴리스가 생성되었다는 배너가 나타나고 릴리스 이름이 링크로 표시됩니다. 이 링크를 선택하여 릴리스 요약 페이지를 살펴봅니다.
+2. 릴리스에 대한 설명을 입력하고 올바른 아티팩트가 선택되었는지 확인한 다음, **만들기** 를 선택합니다. 잠시 후 새 릴리스가 생성되었다는 배너가 나타나고 릴리스 이름이 링크로 표시됩니다. 이 링크를 선택하여 릴리스 요약 페이지를 살펴봅니다.
 
-3. 릴리스 요약 페이지에는 릴리스에 대한 세부 정보가 표시됩니다. "릴리스-2"의 다음 화면 캡처에서 **환경** 섹션에는 Azure **배포 상태**가 "진행 중"으로 표시되고, Azure Stack Hub의 상태는 "성공"으로 표시됩니다. Azure 환경의 배포 상태가 "성공"으로 변경되면 릴리스를 승인할 준비가 되었다는 배너가 표시됩니다. 배포가 보류 중이거나 실패한 경우 파란색 **(i)** 정보 아이콘이 표시됩니다. 아이콘을 마우스로 가리키면 지연 또는 실패 이유를 설명하는 팝업이 표시됩니다.
+3. 릴리스 요약 페이지에는 릴리스에 대한 세부 정보가 표시됩니다. "릴리스-2"의 다음 화면 캡처에서 **환경** 섹션에는 Azure **배포 상태** 가 "진행 중"으로 표시되고, Azure Stack Hub의 상태는 "성공"으로 표시됩니다. Azure 환경의 배포 상태가 "성공"으로 변경되면 릴리스를 승인할 준비가 되었다는 배너가 표시됩니다. 배포가 보류 중이거나 실패한 경우 파란색 **(i)** 정보 아이콘이 표시됩니다. 아이콘을 마우스로 가리키면 지연 또는 실패 이유를 설명하는 팝업이 표시됩니다.
 
 4. 릴리스 목록과 같은 기타 보기에도 승인이 보류 중이라는 아이콘이 표시됩니다. 이 아이콘의 팝업은 환경 이름 및 배포와 관련된 자세한 정보를 표시합니다. 관리자는 손쉽게 전반적인 릴리스 진행률을 확인하고 승인 대기 중인 릴리스를 볼 수 있습니다.
 
 ## <a name="monitor-and-track-deployments"></a>배포 모니터링 및 추적
 
-1. **릴리스-2** 요약 페이지에서 **로그**를 선택합니다. 배포하는 동안 이 페이지에는 에이전트의 실시간 로그가 표시됩니다. 왼쪽 창에는 각 환경에 대한 각 배포 작업의 상태가 표시됩니다.
+1. **릴리스-2** 요약 페이지에서 **로그** 를 선택합니다. 배포하는 동안 이 페이지에는 에이전트의 실시간 로그가 표시됩니다. 왼쪽 창에는 각 환경에 대한 각 배포 작업의 상태가 표시됩니다.
 
 2. 배포 전 또는 배포 후 승인에 대한 **작업** 열에서 사람 아이콘을 선택하여 배포를 승인(또는 거부)한 사람과 그 사람이 제공한 메시지를 확인합니다.
 
-3. 배포가 완료되면 전체 로그 파일이 오른쪽 창에 표시됩니다. 왼쪽 창에서 원하는 **단계**를 선택하여 **작업 초기화** 같은 단일 단계에 대한 로그 파일을 살펴봅니다. 개별 로그를 확인하는 기능을 사용하면 전체 배포의 일부를 쉽게 추적하고 디버그할 수 있습니다. 단계에 대한 로그 파일을 **저장**하거나 **모든 로그를 zip으로 다운로드**합니다.
+3. 배포가 완료되면 전체 로그 파일이 오른쪽 창에 표시됩니다. 왼쪽 창에서 원하는 **단계** 를 선택하여 **작업 초기화** 같은 단일 단계에 대한 로그 파일을 살펴봅니다. 개별 로그를 확인하는 기능을 사용하면 전체 배포의 일부를 쉽게 추적하고 디버그할 수 있습니다. 단계에 대한 로그 파일을 **저장** 하거나 **모든 로그를 zip으로 다운로드** 합니다.
 
 4. **요약** 탭을 열고 릴리스에 대한 일반 정보를 확인합니다. 이 보기에는 빌드, 빌드가 배포된 환경, 배포 상태에 대한 자세한 정보와 릴리스에 대한 기타 정보가 표시됩니다.
 
 5. 환경 링크(**Azure** 또는 **Azure Stack Hub**)를 선택하여 특정 환경의 기존 배포 및 보류 중인 배포를 확인합니다. 이러한 보기를 사용하여 동일한 빌드가 두 환경에 배포되었는지 신속하게 확인할 수 있습니다.
 
-6. 브라우저에서 **배포된 프로덕션 앱**을 엽니다. 예를 들어 Azure App Service 웹 사이트의 경우 URL `https://[your-app-name\].azurewebsites.net`을 엽니다.
+6. 브라우저에서 **배포된 프로덕션 앱** 을 엽니다. 예를 들어 Azure App Service 웹 사이트의 경우 URL `https://[your-app-name\].azurewebsites.net`을 엽니다.
 
 ### <a name="integration-of-azure-and-azure-stack-hub-provides-a-scalable-cross-cloud-solution"></a>Azure와 Azure Stack Hub를 통합하여 확장성 있는 클라우드 간 솔루션 제공
 
