@@ -1,445 +1,439 @@
 ### YamlMime:Hub
 title: Azure 하이브리드 및 다중 클라우드 설명서
-summary: 글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 리소스입니다.
+summary: '글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 리소스입니다.'
 brand: azure
 metadata:
   title: Azure 하이브리드 및 다중 클라우드 클라우드 설명서
-  description: 글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 리소스입니다.
+  description: '글로벌 클라우드, 데이터 센터 및 에지에 걸친 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 리소스입니다.'
   ms.service: multiple
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
   ms.date: 03/09/2021
   ms.custom: e2e-hybrid
-  ms.openlocfilehash: 63dedc60e43b3dac708772821bd6f2a0b00c38fb
-  ms.sourcegitcommit: 6404be204d56d42f96ab525baf6108f4b710da77
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 03/29/2021
-  ms.locfileid: "105735595"
 highlightedContent:
   items:
-  - title: 'Ignite 2021: 하이브리드 세션'
-    itemType: video
-    url: https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=hybrid
-  - title: 'Ignite 2021: Azure Arc 세션'
-    itemType: video
-    url: https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=" Arc "
-  - title: 'Ignite 2021: Edge AI 세션'
-    itemType: video
-    url: https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q=" AI edge"
-  - title: Azure Arc 및 Azure Stack을 사용하여 최신 하이브리드 애플리케이션 빌드
-    itemType: video
-    url: https://channel9.msdn.com/Shows/Azure-Friday/Building-modern-hybrid-applications-with-Azure-Arc-and-Azure-Stack
-  - title: 'IT Ops 설명: 하이브리드에 대한 모든 것(Mark Russinovich 출연)'
-    itemType: video
-    url: https://techcommunity.microsoft.com/t5/itops-talk-blog/bg-p/ITOpsTalkBlog/label-name/ITOps%20Talks?WT.mc_modinfra-12531-socuff
-  - title: Azure Modular 데이터 센터 소개
-    itemType: video
-    url: https://azure.microsoft.com/resources/videos/azure-modular-datacenter/
-  - title: 'Inspire 2020: Azure Stack HCI의 새로운 기능'
-    itemType: video
-    url: https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030
-  - title: '빌드 2020: 하이브리드 세션'
-    itemType: video
-    url: https://mybuild.microsoft.com/sessions?q=hybrid%2520%2522%2520Arc%2520%2522%2520%2522%2520intelligent%2520edge%2520%2522%2520%2522%2520sql%2520edge%2520%2522&g=%255B%2522on-demand%2522%255D
+    - title: 'Ignite 2021: 하이브리드 세션'
+      itemType: video
+      url: 'https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=hybrid'
+    - title: 'Ignite 2021: Azure Arc 세션'
+      itemType: video
+      url: 'https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=" Arc "'
+    - title: 'Ignite 2021: Edge AI 세션'
+      itemType: video
+      url: 'https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q=" AI edge"'
+    - title: Azure Arc 및 Azure Stack을 사용하여 최신 하이브리드 애플리케이션 빌드
+      itemType: video
+      url: 'https://channel9.msdn.com/Shows/Azure-Friday/Building-modern-hybrid-applications-with-Azure-Arc-and-Azure-Stack'
+    - title: 'IT Ops 설명: 하이브리드에 대한 모든 것(Mark Russinovich 출연)'
+      itemType: video
+      url: 'https://techcommunity.microsoft.com/t5/itops-talk-blog/bg-p/ITOpsTalkBlog/label-name/ITOps%20Talks?WT.mc_modinfra-12531-socuff'
+    - title: Azure Modular 데이터 센터 소개
+      itemType: video
+      url: 'https://azure.microsoft.com/resources/videos/azure-modular-datacenter/'
+    - title: 'Inspire 2020: Azure Stack HCI의 새로운 기능'
+      itemType: video
+      url: 'https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030'
+    - title: '빌드 2020: 하이브리드 세션'
+      itemType: video
+      url: 'https://mybuild.microsoft.com/sessions?q=hybrid%2520%2522%2520Arc%2520%2522%2520%2522%2520intelligent%2520edge%2520%2522%2520%2522%2520sql%2520edge%2520%2522&g=%255B%2522on-demand%2522%255D'
 productDirectory:
   title: Azure 하이브리드 및 다중 클라우드 플랫폼
   summary: 하이브리드 및 다중 클라우드 솔루션을 빌드하고 운영하는 데 사용되는 플랫폼입니다.
   items:
-  - title: Azure 글로벌 퍼블릭/소버린 클라우드 플랫폼입니다.
-    imageSrc: media/index/logo_azure.svg
-    links:
-    - url: /azure
-      text: Azure 서비스
-  - title: 호스팅, 온-프레미스 및 모바일 데이터 센터를 위한 프라이빗 클라우드 플랫폼입니다.
-    imageSrc: media/index/azure-stack-hub.svg
-    links:
-    - url: /azure-stack/mdc
-      text: Azure Modular Datacenter
-    - url: /azure-stack/hci
-      text: Azure Stack HCI
-    - url: /azure-stack#azure-stack-hub
-      text: Azure Stack Hub
-    - url: /azure-stack/ruggedized
-      text: Azure Stack Hub Ruggedized
-  - title: 디바이스용 인텔리전트 에지 플랫폼
-    imageSrc: media/index/intelligent.svg
-    links:
-    - url: /azure/iot-edge/
-      text: Azure IoT Edge
-    - url: /azure-sphere
-      text: Azure Sphere
-    - url: /azure/databox-online/
-      text: Azure Stack Edge
-    - url: /windows/iot-core/
-      text: IoT용 Windows
+    - title: Azure 글로벌 퍼블릭/소버린 클라우드 플랫폼입니다.
+      imageSrc: 'https://static.docs.com/ui/media/product/azure/azure.svg'
+      links:
+        - url: /azure
+          text: Azure 서비스
+    - title: '호스팅, 온-프레미스 및 모바일 데이터 센터를 위한 프라이빗 클라우드 플랫폼입니다.'
+      imageSrc: media/index/azure-stack-hub.svg
+      links:
+        - url: /azure-stack/mdc
+          text: Azure Modular Datacenter
+        - url: /azure-stack/hci
+          text: Azure Stack HCI
+        - url: /azure-stack#azure-stack-hub
+          text: Azure Stack Hub
+        - url: /azure-stack/ruggedized
+          text: Azure Stack Hub Ruggedized
+    - title: 디바이스용 인텔리전트 에지 플랫폼
+      imageSrc: media/index/intelligent.svg
+      links:
+        - url: /azure/iot-edge/
+          text: Azure IoT Edge
+        - url: /azure-sphere
+          text: Azure Sphere
+        - url: /azure/databox-online/
+          text: Azure Stack Edge
+        - url: /windows/iot-core/
+          text: IoT용 Windows
 conceptualContent:
   title: 하이브리드 및 다중 클라우드 기술
   summary: 하이브리드 및 다중 클라우드 솔루션을 빌드 및 운영하기 위한 서비스 및 제품입니다.
   items:
-  - title: AI + Machine Learning
-    links:
-    - url: /azure/bot-service
-      itemType: overview
-      text: Azure Bot Service
-    - url: /azure/search/
-      itemType: overview
-      text: Azure Cognitive Search
-    - url: /azure/cognitive-services/
-      itemType: overview
-      text: Azure Cognitive Services
-    - url: /azure/machine-learning/
-      itemType: overview
-      text: Azure Machine Learning
-  - title: 컨테이너
-    links:
-    - url: /azure/azure-arc/kubernetes/
-      itemType: overview
-      text: Azure Arc 사용 Kubernetes(미리 보기)
-    - url: /azure/container-instances/
-      itemType: overview
-      text: Azure Container Instances
-    - url: /azure/container-registry/
-      itemType: overview
-      text: Azure Container Registry
-    - url: /azure/aks/
-      itemType: overview
-      text: Azure의 Azure Kubernetes Services
-    - url: /azure-stack/user/azure-stack-kubernetes-aks-engine-overview
-      itemType: overview
-      text: Azure Stack Hub의 Azure Kubernetes Services
-    - url: /azure/docker/
-      itemType: overview
-      text: Azure의 Docker
-    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
-      itemType: overview
-      text: Kubernetes의 IoT Edge
-  - title: 데이터베이스
-    links:
-    - url: /azure/azure-arc/data/overview
-      itemType: overview
-      text: Azure Arc 지원 데이터 서비스(미리 보기)
-    - url: /sql/sql-server/azure-arc/overview
-      itemType: overview
-      text: Azure Arc 지원 SQL Server(미리 보기)
-    - url: /azure/azure-sql-edge/overview
-      itemType: overview
-      text: Azure SQL Edge(미리 보기)
-  - title: 개발 및 통합
-    links:
-    - url: /azure-stack/operator/azure-stack-app-service-overview
-      itemType: overview
-      text: Azure Stack Hub의 App Service
-    - url: /azure/app-service/app-service-hybrid-connections
-      itemType: overview
-      text: Azure App Service 하이브리드 연결
-    - url: /azure/devops
-      itemType: overview
-      text: CI/CD용 Azure DevOps
-    - url: /azure/event-hubs/
-      itemType: overview
-      text: Azure Event Hubs
-    - url: /azure/azure-functions/
-      itemType: overview
-      text: Azure 기능
-    - url: /azure/iot-hub/
-      itemType: overview
-      text: Azure IoT Hub
-    - url: /azure/logic-apps/
-      itemType: overview
-      text: Azure Logic Apps
-    - url: /azure/azure-monitor/app/app-insights-overview
-      itemType: overview
-      text: Azure Monitor - Application Insights
-    - url: /azure/service-fabric/
-      itemType: overview
-      text: Azure Service Fabric
-    - url: /azure-stack/user/event-hubs-overview
-      itemType: overview
-      text: Azure Stack Hub의 Event Hubs
-    - url: /azure-stack/user/iot-hub-overview
-      itemType: overview
-      text: Azure Stack Hub의 IoT Hub(미리 보기)
-  - title: Microsoft Edge
-    links:
-    - url: /azure/databox-online/data-box-gateway-overview
-      itemType: overview
-      text: Azure Databox Gateway
-    - url: /azure/iot-edge/
-      itemType: overview
-      text: Azure IoT Edge
-    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
-      itemType: overview
-      text: Kubernetes의 Azure IoT Edge
-    - url: /azure-sphere
-      itemType: overview
-      text: Azure Sphere
-    - url: /azure/databox-online/azure-stack-edge-overview
-      itemType: overview
-      text: Azure Stack Edge
-    - url: /azure/azure-sql-edge/overview
-      itemType: overview
-      text: Azure SQL Edge(미리 보기)
-    - url: /windows/iot-core/
-      itemType: overview
-      text: IoT용 Windows
-  - title: ID 및 보안
-    links:
-    - url: /azure/active-directory/hybrid/
-      itemType: overview
-      text: Azure AD 하이브리드 ID
-    - url: /azure/security-center/
-      itemType: overview
-      text: Azure Security Center
-    - url: /azure/sentinel/
-      itemType: overview
-      text: Azure Sentinel
-    - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
-      itemType: overview
-      text: 하이브리드 Azure AD 가입 디바이스
-  - title: 관리
-    links:
-    - url: /azure/azure-arc/data/overview
-      itemType: overview
-      text: Azure Arc 지원 데이터 서비스(미리 보기)
-    - url: /azure/azure-arc/kubernetes/
-      itemType: overview
-      text: Azure Arc 사용 Kubernetes(미리 보기)
-    - url: /azure/azure-arc/servers
-      itemType: overview
-      text: Azure Arc 지원 서버
-    - url: /sql/sql-server/azure-arc/overview
-      itemType: overview
-      text: Azure Arc 지원 SQL Server(미리 보기)
-    - url: /azure/automation/
-      itemType: overview
-      text: Azure Automation
-    - url: /azure/storage/files/
-      itemType: overview
-      text: Azure 파일
-    - url: /azure/azure-monitor
-      itemType: overview
-      text: Azure Monitor
-    - url: /azure/site-recovery/
-      itemType: overview
-      text: Azure Site Recovery
-    - url: /azure-stack/hci/overview
-      itemType: overview
-      text: Azure Stack HCI 하이브리드 기능
-    - url: /windows-server/manage/windows-admin-center/azure/
-      itemType: overview
-      text: Windows Admin Center Azure 하이브리드 서비스
-  - title: 네트워킹
-    links:
-    - url: /azure/networking/edge-zones-overview
-      itemType: overview
-      text: Azure Edge Zone
-    - url: /azure/expressroute/
-      itemType: overview
-      text: Azure ExpressRoute
-    - url: /azure/networking/azure-orbital-overview
-      itemType: overview
-      text: Azure Orbital(미리 보기)
-    - url: /azure/load-balancer/
-      itemType: overview
-      text: Azure Load Balancer
-    - url: /azure/private-link/
-      itemType: overview
-      text: Azure Private Link
-    - url: /azure/azure-relay/
-      itemType: overview
-      text: Azure Relay
-    - url: /azure/traffic-manager/
-      itemType: overview
-      text: Azure Traffic Manager
-    - url: /azure/virtual-network/
-      itemType: overview
-      text: Azure Virtual Network
-    - url: /azure/vpn-gateway/
-      itemType: overview
-      text: Azure VPN Gateway
-  - title: 스토리지
-    links:
-    - url: /azure/avere-vfxt/avere-vfxt-overview
-      itemType: overview
-      text: Avere vFXT for Azure
-    - url: /azure/backup/
-      itemType: overview
-      text: Azure Backup
-    - url: /azure/storage/files/storage-files-introduction
-      itemType: overview
-      text: Azure 파일
-    - url: /azure/site-recovery/
-      itemType: overview
-      text: Azure Site Recovery
-    - url: /azure/fxt-edge-filer/fxt-overview
-      itemType: overview
-      text: Azure FXT Edge Filer
-additionalContent:
-  sections:
-  - title: 하이브리드 및 다중 클라우드 솔루션
-    summary: 하이브리드 및 다중 클라우드 프로젝트를 살펴보고 다시 사용하기 위한 참고 자료와 예입니다.
-    items:
-    - title: 앱 패턴 및 솔루션 예
+    - title: AI + Machine Learning
       links:
-      - url: ./app-solutions/overview-patterns-solution-examples.md
-        text: 패턴 및 솔루션 예로는 무엇이 있습니까?
-      - url: ./app-solutions/overview-app-design-considerations.md
-        text: 앱 디자인 고려 사항
-    - title: 앱 패턴 살펴보기
+        - url: /azure/bot-service
+          itemType: overview
+          text: Azure Bot Service
+        - url: /azure/search/
+          itemType: overview
+          text: Azure Cognitive Search
+        - url: /azure/cognitive-services/
+          itemType: overview
+          text: Azure Cognitive Services
+        - url: /azure/machine-learning/
+          itemType: overview
+          text: Azure Machine Learning
+    - title: 컨테이너
       links:
-      - url: ./app-solutions/pattern-cross-cloud-scale.md
-        text: 클라우드 간 크기 조정
-      - url: ./app-solutions/pattern-cicd-pipeline.md
-        text: DevOps 하이브리드 CI/CD
-      - url: ./app-solutions/pattern-retail-footfall-detection.md
-        text: 고객 수 검색(소매)
-      - url: ./app-solutions/pattern-geo-distributed.md
-        text: 지리적으로 분산된 앱
-      - url: ./app-solutions/pattern-highly-available-kubernetes.md
-        text: 고가용성 Kubernetes 클러스터
-    - title: 앱 솔루션 배포 예
+        - url: /azure/azure-arc/kubernetes/
+          itemType: overview
+          text: Azure Arc 사용 Kubernetes(미리 보기)
+        - url: /azure/container-instances/
+          itemType: overview
+          text: Azure Container Instances
+        - url: /azure/container-registry/
+          itemType: overview
+          text: Azure Container Registry
+        - url: /azure/aks/
+          itemType: overview
+          text: Azure의 Azure Kubernetes Services
+        - url: /azure-stack/user/azure-stack-kubernetes-aks-engine-overview
+          itemType: overview
+          text: Azure Stack Hub의 Azure Kubernetes Services
+        - url: /azure/docker/
+          itemType: overview
+          text: Azure의 Docker
+        - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+          itemType: overview
+          text: Kubernetes의 IoT Edge
+    - title: 데이터베이스
       links:
-      - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
-        text: 클라우드 간 크기 조정
-      - url: https://aka.ms/hybriddevopsdeploy
-        text: DevOps 하이브리드 CI/CD
-      - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
-        text: 고객 수 검색(소매)
-      - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
-        text: 지리적으로 분산된 앱
-      - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
-        text: 고가용성 Kubernetes 클러스터
-  - title: 평가 및 학습 리소스
-    items:
-    - title: Azure Stack
+        - url: /azure/azure-arc/data/overview
+          itemType: overview
+          text: Azure Arc 지원 데이터 서비스(미리 보기)
+        - url: /sql/sql-server/azure-arc/overview
+          itemType: overview
+          text: Azure Arc 지원 SQL Server(미리 보기)
+        - url: /azure/azure-sql-edge/overview
+          itemType: overview
+          text: Azure SQL Edge(미리 보기)
+    - title: 개발 및 통합
       links:
-      - url: /azure-stack/asdk
-        text: Azure Stack 개발 키트
-      - url: https://github.com/Azure/AzureStackHCI-EvalGuide
-        text: Azure Stack HCI 평가 가이드
-      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
-        text: Azure Stack 하이브리드 앱 소개
-      - url: https://www.youtube.com/watch?v=2lw8zOpJTn0
-        text: Azure Stack 허브에서 Azure로 동적으로 크기 조정
+        - url: /azure-stack/operator/azure-stack-app-service-overview
+          itemType: overview
+          text: Azure Stack Hub의 App Service
+        - url: /azure/app-service/app-service-hybrid-connections
+          itemType: overview
+          text: Azure App Service 하이브리드 연결
+        - url: /azure/devops
+          itemType: overview
+          text: CI/CD용 Azure DevOps
+        - url: /azure/event-hubs/
+          itemType: overview
+          text: Azure Event Hubs
+        - url: /azure/azure-functions/
+          itemType: overview
+          text: Azure 기능
+        - url: /azure/iot-hub/
+          itemType: overview
+          text: Azure IoT Hub
+        - url: /azure/logic-apps/
+          itemType: overview
+          text: Azure Logic Apps
+        - url: /azure/azure-monitor/app/app-insights-overview
+          itemType: overview
+          text: Azure Monitor - Application Insights
+        - url: /azure/service-fabric/
+          itemType: overview
+          text: Azure Service Fabric
+        - url: /azure-stack/user/event-hubs-overview
+          itemType: overview
+          text: Azure Stack Hub의 Event Hubs
+        - url: /azure-stack/user/iot-hub-overview
+          itemType: overview
+          text: Azure Stack Hub의 IoT Hub(미리 보기)
     - title: Microsoft Edge
       links:
-      - url: https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator
-        text: Azure IoT Edge AI 비디오 인텔리전스 솔루션 가속기
-      - url: https://labs.iotedge.dev/
-        text: Azure IoT Edge 실습 교육
-      - url: https://www.azureiotsolutions.com/Accelerators
-        text: Azure IoT 솔루션 가속기
-      - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
-        text: Azure IoT Edge 디바이스에 대해 인증됨
-    - title: 일반
-      links:
-      - url: /learn/modules/align-requirements-in-azure/
-        text: 요구 사항에 맞게 Azure의 클라우드 형식 및 서비스 모델 선택
-      - url: /azure/architecture/browse/?azure_categories=hybrid
-        text: Azure 하이브리드 아키텍처
-      - url: https://azure.microsoft.com/overview/azure-hybrid/
-        text: Azure 하이브리드 기능
-      - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
-        text: Azure 하이브리드 가상 이벤트
-      - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
-        text: 클라우드 채택 프레임워크 - 하이브리드 및 다중 클라우드 시나리오
-      - url: /learn/modules/intro-to-azure-hybrid-services/
-        text: Azure 하이브리드 클라우드 서비스 소개
-      - url: https://events.microsoft.com/
-        text: Microsoft Events Catalog
-      - url: /learn
-        text: Microsoft Learn
+        - url: /azure/databox-online/data-box-gateway-overview
+          itemType: overview
+          text: Azure Databox Gateway
+        - url: /azure/iot-edge/
+          itemType: overview
+          text: Azure IoT Edge
+        - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+          itemType: overview
+          text: Kubernetes의 Azure IoT Edge
+        - url: /azure-sphere
+          itemType: overview
+          text: Azure Sphere
+        - url: /azure/databox-online/azure-stack-edge-overview
+          itemType: overview
+          text: Azure Stack Edge
+        - url: /azure/azure-sql-edge/overview
+          itemType: overview
+          text: Azure SQL Edge(미리 보기)
+        - url: /windows/iot-core/
+          itemType: overview
+          text: IoT용 Windows
     - title: ID 및 보안
       links:
-      - url: /learn/modules/azure-sentinel-deploy-configure/
-        text: Azure Sentinel 배포 및 데이터 원본 연결
-      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
-        text: Azure Relay로 안전하게 하이브리드 서비스 노출
-      - url: /learn/modules/implement-manage-hybrid-identity/
-        text: 하이브리드 ID 구현 및 관리
-      - url: /learn/modules/implement-hybrid-identity-windows-server/
-        text: Windows Server를 사용하여 하이브리드 ID 구현
-      - url: /learn/modules/intro-to-azure-sentinel/
-        text: Azure Sentinel 소개
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
-        text: Windows Server 하이브리드 클라우드 관리, 모니터링 및 보안
+        - url: /azure/active-directory/hybrid/
+          itemType: overview
+          text: Azure AD 하이브리드 ID
+        - url: /azure/security-center/
+          itemType: overview
+          text: Azure Security Center
+        - url: /azure/sentinel/
+          itemType: overview
+          text: Azure Sentinel
+        - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
+          itemType: overview
+          text: 하이브리드 Azure AD 가입 디바이스
     - title: 관리
       links:
-      - url: https://azurearcjumpstart.io/
-        text: Azure Arc 빠른 시작 가이드
-      - url: /learn/browse/?terms=%22%20Arc%20%22
-        text: Azure Arc 학습 모듈
-      - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
-        text: 고가용성 및 재해 복구 전략 설명
-      - url: /learn/browse/?terms="disaster%20recovery"
-        text: 재해 복구 학습 모듈
-      - url: /learn/browse/?terms="high%20availability"
-        text: 고가용성 학습 모듈
-      - url: /learn/modules/intro-to-azure-arc/
-        text: Azure Arc 소개
-      - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
-        text: Windows Server IaaS Virtual Machines 및 하이브리드 인스턴스 모니터링
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
-        text: Windows Server 하이브리드 클라우드 관리, 모니터링 및 보안
+        - url: /azure/azure-arc/data/overview
+          itemType: overview
+          text: Azure Arc 지원 데이터 서비스(미리 보기)
+        - url: /azure/azure-arc/kubernetes/
+          itemType: overview
+          text: Azure Arc 사용 Kubernetes(미리 보기)
+        - url: /azure/azure-arc/servers
+          itemType: overview
+          text: Azure Arc 지원 서버
+        - url: /sql/sql-server/azure-arc/overview
+          itemType: overview
+          text: Azure Arc 지원 SQL Server(미리 보기)
+        - url: /azure/automation/
+          itemType: overview
+          text: Azure Automation
+        - url: /azure/storage/files/
+          itemType: overview
+          text: Azure 파일
+        - url: /azure/azure-monitor
+          itemType: overview
+          text: Azure Monitor
+        - url: /azure/site-recovery/
+          itemType: overview
+          text: Azure Site Recovery
+        - url: /azure-stack/hci/overview
+          itemType: overview
+          text: Azure Stack HCI 하이브리드 기능
+        - url: /windows-server/manage/windows-admin-center/azure/
+          itemType: overview
+          text: Windows Admin Center Azure 하이브리드 서비스
     - title: 네트워킹
       links:
-      - url: /learn/modules/design-a-hybrid-network-architecture/
-        text: Azure에서 하이브리드 네트워크 아키텍처 디자인
-      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
-        text: Azure Relay로 안전하게 하이브리드 서비스 노출
-      - url: /learn/modules/implement-hybrid-network-infrastructure/
-        text: 하이브리드 네트워크 인프라 구현
+        - url: /azure/networking/edge-zones-overview
+          itemType: overview
+          text: Azure Edge Zone
+        - url: /azure/expressroute/
+          itemType: overview
+          text: Azure ExpressRoute
+        - url: /azure/networking/azure-orbital-overview
+          itemType: overview
+          text: Azure Orbital(미리 보기)
+        - url: /azure/load-balancer/
+          itemType: overview
+          text: Azure Load Balancer
+        - url: /azure/private-link/
+          itemType: overview
+          text: Azure Private Link
+        - url: /azure/azure-relay/
+          itemType: overview
+          text: Azure Relay
+        - url: /azure/traffic-manager/
+          itemType: overview
+          text: Azure Traffic Manager
+        - url: /azure/virtual-network/
+          itemType: overview
+          text: Azure Virtual Network
+        - url: /azure/vpn-gateway/
+          itemType: overview
+          text: Azure VPN Gateway
     - title: 스토리지
       links:
-      - url: /learn/modules/implement-hybrid-file-server-infrastructure/
-        text: 하이브리드 파일 서버 인프라 구현
-      - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
-        text: Windows Server IaaS를 사용하여 하이브리드 백업 및 복구 구현
-    - title: Windows Server
-      links:
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-infrastructure/
-        text: Windows Server 하이브리드 클라우드 인프라 구현
-      - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
-        text: Windows Server IaaS를 사용하여 하이브리드 백업 및 복구 구현
-      - url: /learn/modules/implement-hybrid-identity-windows-server/
-        text: Windows Server를 사용하여 하이브리드 ID 구현
-      - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
-        text: Windows Server IaaS Virtual Machines 및 하이브리드 인스턴스 모니터링
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
-        text: Windows Server 하이브리드 클라우드 관리, 모니터링 및 보안
-  - title: 추가 리소스
-    items:
-    - title: 일반
-      links:
-      - url: https://azure.microsoft.com/blog/topics/hybrid/
-        text: Azure 하이브리드 블로그
-      - url: https://azure.microsoft.com/overview/azure-hybrid/
-        text: Azure 하이브리드 기능
-      - url: https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22
-        text: 고객 Azure Stack Hub 솔루션
-      - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
-        text: 고객 하이브리드 클라우드 스토리
-    - title: 지원
-      links:
-      - url: https://azure.microsoft.com/support/options/
-        text: Azure 지원
-      - url: https://feedback.azure.com/
-        text: Azure 사용자 의견 피드백
-      - url: /answers/products/
-        text: Microsoft Q&A 포럼
-      - url: https://stackoverflow.com/
-        text: Stack Overflow
-    - title: 기술
-      links:
-      - url: /azure/developer/
-        text: Azure 개발자 문서 및 도구
-      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
-        text: Visual Studio Code용 Azure IoT Tools
-      - url: /samples/browse/
-        text: 코드 샘플 브라우저
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Vision AI Developer Kit
-      - url: /visualstudio/azure/
-        text: Visual Studio Azure 개발
+        - url: /azure/avere-vfxt/avere-vfxt-overview
+          itemType: overview
+          text: Avere vFXT for Azure
+        - url: /azure/backup/
+          itemType: overview
+          text: Azure Backup
+        - url: /azure/storage/files/storage-files-introduction
+          itemType: overview
+          text: Azure 파일
+        - url: /azure/site-recovery/
+          itemType: overview
+          text: Azure Site Recovery
+        - url: /azure/fxt-edge-filer/fxt-overview
+          itemType: overview
+          text: Azure FXT Edge Filer
+additionalContent:
+  sections:
+    - title: 하이브리드 및 다중 클라우드 솔루션
+      summary: 하이브리드 및 다중 클라우드 프로젝트를 살펴보고 다시 사용하기 위한 참고 자료와 예입니다.
+      items:
+        - title: 앱 패턴 및 솔루션 예
+          links:
+            - url: ./app-solutions/overview-patterns-solution-examples.md
+              text: 패턴 및 솔루션 예로는 무엇이 있습니까?
+            - url: ./app-solutions/overview-app-design-considerations.md
+              text: 앱 디자인 고려 사항
+        - title: 앱 패턴 살펴보기
+          links:
+            - url: ./app-solutions/pattern-cross-cloud-scale.md
+              text: 클라우드 간 크기 조정
+            - url: ./app-solutions/pattern-cicd-pipeline.md
+              text: DevOps 하이브리드 CI/CD
+            - url: ./app-solutions/pattern-retail-footfall-detection.md
+              text: 고객 수 검색(소매)
+            - url: ./app-solutions/pattern-geo-distributed.md
+              text: 지리적으로 분산된 앱
+            - url: ./app-solutions/pattern-highly-available-kubernetes.md
+              text: 고가용성 Kubernetes 클러스터
+        - title: 앱 솔루션 배포 예
+          links:
+            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+              text: 클라우드 간 크기 조정
+            - url: 'https://aka.ms/hybriddevopsdeploy'
+              text: DevOps 하이브리드 CI/CD
+            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+              text: 고객 수 검색(소매)
+            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+              text: 지리적으로 분산된 앱
+            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+              text: 고가용성 Kubernetes 클러스터
+    - title: 평가 및 학습 리소스
+      items:
+        - title: Azure Stack
+          links:
+            - url: /azure-stack/asdk
+              text: Azure Stack 개발 키트
+            - url: 'https://github.com/Azure/AzureStackHCI-EvalGuide'
+              text: Azure Stack HCI 평가 가이드
+            - url: 'https://www.youtube.com/watch?v=to8D7Xl9SU8'
+              text: Azure Stack 하이브리드 앱 소개
+            - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
+              text: Azure Stack 허브에서 Azure로 동적으로 크기 조정
+        - title: Microsoft Edge
+          links:
+            - url: 'https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator'
+              text: Azure IoT Edge AI 비디오 인텔리전스 솔루션 가속기
+            - url: 'https://labs.iotedge.dev/'
+              text: Azure IoT Edge 실습 교육
+            - url: 'https://www.azureiotsolutions.com/Accelerators'
+              text: Azure IoT 솔루션 가속기
+            - url: 'https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}'
+              text: Azure IoT Edge 디바이스에 대해 인증됨
+        - title: 일반
+          links:
+            - url: /learn/modules/align-requirements-in-azure/
+              text: 요구 사항에 맞게 Azure의 클라우드 형식 및 서비스 모델 선택
+            - url: /azure/architecture/browse/?azure_categories=hybrid
+              text: Azure 하이브리드 아키텍처
+            - url: 'https://azure.microsoft.com/overview/azure-hybrid/'
+              text: Azure 하이브리드 기능
+            - url: 'https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf'
+              text: Azure 하이브리드 가상 이벤트
+            - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
+              text: 클라우드 채택 프레임워크 - 하이브리드 및 다중 클라우드 시나리오
+            - url: /learn/modules/intro-to-azure-hybrid-services/
+              text: Azure 하이브리드 클라우드 서비스 소개
+            - url: 'https://events.microsoft.com/'
+              text: Microsoft Events Catalog
+            - url: /learn
+              text: Microsoft Learn
+        - title: ID 및 보안
+          links:
+            - url: /learn/modules/azure-sentinel-deploy-configure/
+              text: Azure Sentinel 배포 및 데이터 원본 연결
+            - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+              text: Azure Relay로 안전하게 하이브리드 서비스 노출
+            - url: /learn/modules/implement-manage-hybrid-identity/
+              text: 하이브리드 ID 구현 및 관리
+            - url: /learn/modules/implement-hybrid-identity-windows-server/
+              text: Windows Server를 사용하여 하이브리드 ID 구현
+            - url: /learn/modules/intro-to-azure-sentinel/
+              text: Azure Sentinel 소개
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+              text: 'Windows Server 하이브리드 클라우드 관리, 모니터링 및 보안'
+        - title: 관리
+          links:
+            - url: 'https://azurearcjumpstart.io/'
+              text: Azure Arc 빠른 시작 가이드
+            - url: /learn/browse/?terms=%22%20Arc%20%22
+              text: Azure Arc 학습 모듈
+            - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
+              text: 고가용성 및 재해 복구 전략 설명
+            - url: /learn/browse/?terms="disaster%20recovery"
+              text: 재해 복구 학습 모듈
+            - url: /learn/browse/?terms="high%20availability"
+              text: 고가용성 학습 모듈
+            - url: /learn/modules/intro-to-azure-arc/
+              text: Azure Arc 소개
+            - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
+              text: Windows Server IaaS Virtual Machines 및 하이브리드 인스턴스 모니터링
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+              text: 'Windows Server 하이브리드 클라우드 관리, 모니터링 및 보안'
+        - title: 네트워킹
+          links:
+            - url: /learn/modules/design-a-hybrid-network-architecture/
+              text: Azure에서 하이브리드 네트워크 아키텍처 디자인
+            - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+              text: Azure Relay로 안전하게 하이브리드 서비스 노출
+            - url: /learn/modules/implement-hybrid-network-infrastructure/
+              text: 하이브리드 네트워크 인프라 구현
+        - title: 스토리지
+          links:
+            - url: /learn/modules/implement-hybrid-file-server-infrastructure/
+              text: 하이브리드 파일 서버 인프라 구현
+            - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
+              text: Windows Server IaaS를 사용하여 하이브리드 백업 및 복구 구현
+        - title: Windows Server
+          links:
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-infrastructure/
+              text: Windows Server 하이브리드 클라우드 인프라 구현
+            - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
+              text: Windows Server IaaS를 사용하여 하이브리드 백업 및 복구 구현
+            - url: /learn/modules/implement-hybrid-identity-windows-server/
+              text: Windows Server를 사용하여 하이브리드 ID 구현
+            - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
+              text: Windows Server IaaS Virtual Machines 및 하이브리드 인스턴스 모니터링
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+              text: 'Windows Server 하이브리드 클라우드 관리, 모니터링 및 보안'
+    - title: 추가 리소스
+      items:
+        - title: 일반
+          links:
+            - url: 'https://azure.microsoft.com/blog/topics/hybrid/'
+              text: Azure 하이브리드 블로그
+            - url: 'https://azure.microsoft.com/overview/azure-hybrid/'
+              text: Azure 하이브리드 기능
+            - url: 'https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22'
+              text: 고객 Azure Stack Hub 솔루션
+            - url: 'https://customers.microsoft.com/en-us/search?sq="hybrid cloud"'
+              text: 고객 하이브리드 클라우드 스토리
+        - title: 지원
+          links:
+            - url: 'https://azure.microsoft.com/support/options/'
+              text: Azure 지원
+            - url: 'https://feedback.azure.com/'
+              text: Azure 사용자 의견 피드백
+            - url: /answers/products/
+              text: Microsoft Q&A 포럼
+            - url: 'https://stackoverflow.com/'
+              text: Stack Overflow
+        - title: 기술
+          links:
+            - url: /azure/developer/
+              text: Azure 개발자 문서 및 도구
+            - url: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools'
+              text: Visual Studio Code용 Azure IoT Tools
+            - url: /samples/browse/
+              text: 코드 샘플 브라우저
+            - url: 'https://azure.github.io/Vision-AI-DevKit-Pages/'
+              text: Vision AI Developer Kit
+            - url: /visualstudio/azure/
+              text: Visual Studio Azure 개발
