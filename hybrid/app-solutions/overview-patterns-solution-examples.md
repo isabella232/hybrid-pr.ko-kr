@@ -3,18 +3,18 @@ title: Azure 및 Azure Stack Hub의 하이브리드 패턴 및 솔루션 예제
 description: Azure 및 Azure Stack Hub에서 하이브리드 솔루션을 학습하고 빌드하기 위한 하이브리드 패턴 및 솔루션 예제를 소개합니다.
 author: BryanLa
 ms.topic: overview
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: 9f3f13c23bec31c5132c7e90294356b9463fd72b
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895315"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343861"
 ---
-# <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Azure 및 Azure Stack의 하이브리드 패턴 및 솔루션 예제
+# <a name="hybrid-solution-patterns-and-examples-for-azure-and-azure-stack"></a>Azure 및 Azure Stack의 하이브리드 솔루션 패턴 및 예제
 
 Microsoft는 Azure 및 Azure Stack 제품과 솔루션을 하나의 일관된 Azure 에코시스템으로 제공합니다. Microsoft Azure Stack 제품군은 Azure의 확장입니다.
 
@@ -29,11 +29,11 @@ Azure Stack은 *하이브리드 클라우드* 를 사용하도록 설정하여 �
 
 클라우드를 포괄하는 앱을 *하이브리드 앱* 이라고도 합니다. Azure에서 하이브리드 클라우드 앱을 빌드하고, 위치에 관계없이 연결된 데이터 센터 또는 연결되지 않은 데이터 센터에 배포할 수 있습니다.
 
-하이브리드 앱 시나리오는 개발에 사용할 수 있는 리소스에 따라 크게 달라집니다. 또한 지리, 보안, 인터넷 액세스 등과 같은 고려 사항도 적용됩니다. 여기에 설명된 패턴과 솔루션이 모든 요구 사항을 해결해 주는 것은 아니지만, 하이브리드 솔루션을 구현하는 동안 살펴보고 다시 사용할 수 있는 지침과 예제를 제공합니다.
+하이브리드 앱 시나리오는 개발에 사용할 수 있는 리소스에 따라 크게 달라집니다. 또한 지리, 보안, 인터넷 액세스 등과 같은 고려 사항도 적용됩니다. 여기에 설명된 솔루션 패턴과 예제가 모든 요구 사항을 해결해 주는 것은 아니지만, 하이브리드 솔루션을 구현하는 동안 살펴보고 다시 사용할 수 있는 지침과 예제를 제공합니다.
 
-## <a name="design-patterns"></a>디자인 패턴
+## <a name="solution-patterns"></a>솔루션 패턴
 
-디자인 패턴은 실제 고객 시나리오 및 환경에서 일반화된 반복 가능한 디자인 지침을 추려냅니다. 패턴은 추상적이며 다양한 유형의 시나리오 또는 업종에 적용될 수 있습니다. 각 패턴은 컨텍스트와 문제를 문서화하고 솔루션 예제에 대한 개요를 제공합니다. 솔루션 예제는 패턴의 가능한 구현을 의미합니다.
+솔루션 패턴은 실제 고객 시나리오 및 환경에서 일반화된 반복 가능한 디자인 지침을 추려냅니다. 패턴은 추상적이며 다양한 유형의 시나리오 또는 업종에 적용될 수 있습니다. 각 패턴은 컨텍스트와 문제를 문서화하고 솔루션 예제에 대한 개요를 제공합니다. 솔루션 예제는 패턴의 가능한 구현을 의미합니다.
 
 두 가지 유형의 패턴 문서가 있습니다.
 
