@@ -33,29 +33,29 @@
 - name: 솔루션 배포 가이드
   items:
     - name: 클라우드 간 크기 조정
-      href: solution-deployment-guide-cross-cloud-scaling.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
     - name: 클라우드 간 크기 조정(온-프레미스 데이터)
-      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data
     - name: DevOps 하이브리드 CI/CD
       href: 'https://aka.ms/hybriddevopsdeploy'
     - name: 고객 수 검색(소매)
-      href: solution-deployment-guide-retail-footfall-detection.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
     - name: 지리적으로 분산된 앱
-      href: solution-deployment-guide-geo-distributed.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
     - name: 고가용성 Kubernetes 클러스터
-      href: solution-deployment-guide-highly-available-kubernetes.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
     - name: 하이브리드 연결
-      href: solution-deployment-guide-connectivity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-connectivity
     - name: 하이브리드 ID
-      href: solution-deployment-guide-identity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-identity
     - name: 하이브리드 릴레이
       href: 'https://aka.ms/hybridrelaydeployment'
     - name: 계층화된 데이터
       href: 'https://aka.ms/tiereddatadeploy'
     - name: 고가용성 MongoDB
-      href: solution-deployment-guide-mongodb-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-mongodb-ha
     - name: 고가용성 SQL Server 2016
-      href: solution-deployment-guide-sql-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-sql-ha
     - name: 에지의 품절
       href: 'https://aka.ms/edgeinferencingdeploy'
     - name: 에지에서 ML 모델 학습

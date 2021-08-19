@@ -295,15 +295,15 @@ additionalContent:
               text: 고가용성 Kubernetes 클러스터
         - title: 앱 솔루션 배포 예
           links:
-            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
               text: 클라우드 간 크기 조정
             - url: 'https://aka.ms/hybriddevopsdeploy'
               text: DevOps 하이브리드 CI/CD
-            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
               text: 고객 수 검색(소매)
-            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
               text: 지리적으로 분산된 앱
-            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
               text: 고가용성 Kubernetes 클러스터
     - title: 평가 및 학습 리소스
       items:
@@ -400,7 +400,7 @@ additionalContent:
         - title: 네트워킹
           links:
             - url: /learn/modules/design-a-hybrid-network-architecture/
-              text: Azure에서 하이브리드 네트워크 아키텍처 디자인
+              text: Azure에서 하이브리드 네트워크 아키텍처 설계
             - url: /learn/modules/expose-hybrid-services-with-azure-relay/
               text: Azure Relay로 안전하게 하이브리드 서비스 노출
             - url: /learn/modules/implement-hybrid-network-infrastructure/
