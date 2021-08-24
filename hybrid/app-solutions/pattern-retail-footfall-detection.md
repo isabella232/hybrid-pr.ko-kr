@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.openlocfilehash: 79fb39d418bed53ef6a78980fcd9188bdf6e57ae
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895332"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281281"
 ---
 # <a name="footfall-detection-pattern"></a>고객 수 검색 패턴
 
@@ -88,4 +88,4 @@ Contoso에서는 개인 정보를 존중하면서 지나치게 간섭하지 않�
 - 고객 수 검색 패턴에서 활용하는 [계층화된 데이터 패턴](https://aka.ms/tiereddatadeploy)을 참조합니다.
 - [Custom Vision AI Dev Kit](https://azure.github.io/Vision-AI-DevKit-Pages/)를 참조하여 사용자 지정 비전을 사용하는 방법에 대해 자세히 알아봅니다. 
 
-솔루션 예제를 테스트할 준비가 되면 [고객 수 검색 배포 가이드](solution-deployment-guide-retail-footfall-detection.md)를 계속 진행하세요. 배포 가이드에서는 해당 구성 요소를 배포 및 테스트하는 방법에 대한 단계별 지침을 제공합니다.
+솔루션 예제를 테스트할 준비가 되면 [고객 수 검색 배포 가이드](/azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection)를 계속 진행하세요. 배포 가이드에서는 해당 구성 요소를 배포 및 테스트하는 방법에 대한 단계별 지침을 제공합니다.

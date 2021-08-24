@@ -7,12 +7,12 @@ ms.date: 12/03/2020
 ms.author: bryanla
 ms.reviewer: bryanla
 ms.lastreviewed: 12/03/2020
-ms.openlocfilehash: 454cc0a0531882b7a8ec050a461420ce13eebcfe
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: f8a733bcdab871695e552ec687d42e3ff4230490
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96912004"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281315"
 ---
 # <a name="high-availability-kubernetes-cluster-pattern"></a>고가용성 Kubernetes 클러스터 패턴
 
@@ -394,4 +394,4 @@ Azure Stack Hub의 기능을 확장할 수 있는 Microsoft 파트너 솔루션�
 - Azure Stack Hub의 [클라우드 간 크기 조정](pattern-cross-cloud-scale.md) 및 [지리적으로 분산되는 앱 패턴](pattern-geo-distributed.md)
 - [AKS(Azure Kubernetes Service)의 마이크로서비스 아키텍처](/azure/architecture/reference-architectures/microservices/aks)
 
-솔루션 예를 테스트할 준비가 되면 [고가용성 Kubernetes 클러스터 배포 가이드](solution-deployment-guide-highly-available-kubernetes.md)로 계속 진행하세요. 배포 가이드에서는 해당 구성 요소를 배포 및 테스트하는 방법에 대한 단계별 지침을 제공합니다.
+솔루션 예를 테스트할 준비가 되면 [고가용성 Kubernetes 클러스터 배포 가이드](/azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes)로 계속 진행하세요. 배포 가이드에서는 해당 구성 요소를 배포 및 테스트하는 방법에 대한 단계별 지침을 제공합니다.
